@@ -101,4 +101,5 @@
   },
   "eslint.nodePath": ".yarn/sdks",
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "kiroAgent.configureMCP": "Disabled",
 }
