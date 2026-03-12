@@ -6,13 +6,13 @@
 请确保您的电脑已经安装以下基础设施：
 - **Node.js**: `v16.15.0` (推荐使用 nvm 进行管理)
 - **Java**: JDK 17 及以上（配合 Gradle 编译后端）
-- **pnpm**: `v8.6.12` (使用时需注意与 Node 22+ Corepack 的冲突问题)
+- **pnpm**: `v8.5.5` (使用时需注意与 Node 22+ Corepack 的冲突问题)
 - **Docker** 桌面客户端或 OrbStack (用于运行数据库等中间件)
 
 切换至正确的 Node 和 pnpm 版本环境：
 ```bash
 nvm use 16.15.0
-npm install -g pnpm@8.6.12
+npm install -g pnpm@8.5.5
 ```
 
 > [!WARNING]

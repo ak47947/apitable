@@ -1,0 +1,1478 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<!--
+ APITable <https://github.com/apitable/apitable>
+ Copyright (C) 2022 APITable Ltd. <https://apitable.com>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Affero General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- ========================================================== -->
+    <!-- 翻译模板分类名称 (apitable_template_property) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-template-category-zh-001" author="apitable" labels="template-i18n">
+        <comment>将模板分类名称翻译为中文</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}template_property` SET property_name = '⭐ 精选推荐' WHERE property_code = 'tpcqlCoWSDHFQ';
+            UPDATE `${table.prefix}template_property` SET property_name = '📣 市场营销' WHERE property_code = 'tpcK7L3Xc3XS2';
+            UPDATE `${table.prefix}template_property` SET property_name = '📋 项目管理' WHERE property_code = 'tpc5Bu6yPfpH8';
+            UPDATE `${table.prefix}template_property` SET property_name = '💰 销售与客户' WHERE property_code = 'tpcr05vzH017k';
+            UPDATE `${table.prefix}template_property` SET property_name = '🎨 产品设计与UX' WHERE property_code = 'tpcfY7xjLQSUX';
+            UPDATE `${table.prefix}template_property` SET property_name = '📚 教育培训' WHERE property_code = 'tpcaEcKUMNfHU';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译模板名称 (apitable_template) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-template-name-zh-001" author="apitable" labels="template-i18n">
+        <comment>将官方模板名称翻译为中文</comment>
+        <sql>
+            UPDATE `${table.prefix}template` SET name = '敏捷冲刺管理' WHERE template_id = 'tplFNqzdFo0qK';
+            UPDATE `${table.prefix}template` SET name = '产品发布计划' WHERE template_id = 'tplDu36PN3yMt';
+            UPDATE `${table.prefix}template` SET name = '客户项目管理' WHERE template_id = 'tpl9Qy1d3BYC4';
+            UPDATE `${table.prefix}template` SET name = '视频制作管理' WHERE template_id = 'tplkKZVZhoLcR';
+            UPDATE `${table.prefix}template` SET name = '单项目管理' WHERE template_id = 'tplV4w28zRR5y';
+            UPDATE `${table.prefix}template` SET name = '内容日历' WHERE template_id = 'tpls68R8XJQXH';
+            UPDATE `${table.prefix}template` SET name = '房产CRM' WHERE template_id = 'tplr0y8Z82JCy';
+            UPDATE `${table.prefix}template` SET name = '营销活动管理' WHERE template_id = 'tplMQR44UebkN';
+            UPDATE `${table.prefix}template` SET name = '用户研究管理' WHERE template_id = 'tpl2h5oXUlARv';
+            UPDATE `${table.prefix}template` SET name = '项目管理' WHERE template_id = 'tplED3FVnX8U6';
+            UPDATE `${table.prefix}template` SET name = '内部需求管理' WHERE template_id = 'tpl5X7cPb8R0R';
+            UPDATE `${table.prefix}template` SET name = '库存管理' WHERE template_id = 'tplVaVrnBrUZT';
+            UPDATE `${table.prefix}template` SET name = 'OKR追踪' WHERE template_id = 'tpluf3QLJ4asF';
+            UPDATE `${table.prefix}template` SET name = '课程排期' WHERE template_id = 'tplvV9Y2mJvbS';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译节点（文件夹/数据表/表单/仪表盘/镜像）名称 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-node-name-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译模板空间内所有节点名称为中文</comment>
+        <sql>
+            -- 文件夹 (type=1)
+            UPDATE `${table.prefix}node` SET node_name = '内容日历' WHERE node_id = 'fodXSTN1UlGRj';
+            UPDATE `${table.prefix}node` SET node_name = '课程排期' WHERE node_id = 'fodl2jHu3Zhwl';
+            UPDATE `${table.prefix}node` SET node_name = '客户项目管理' WHERE node_id = 'fodHlYTV2Kz2E';
+            UPDATE `${table.prefix}node` SET node_name = '内部需求管理' WHERE node_id = 'fodc283c2DBY6';
+            UPDATE `${table.prefix}node` SET node_name = '库存管理' WHERE node_id = 'fodEB9gu2Pkac';
+            UPDATE `${table.prefix}node` SET node_name = '营销活动管理' WHERE node_id = 'fodvZKHxGEV4F';
+            UPDATE `${table.prefix}node` SET node_name = 'OKR追踪' WHERE node_id = 'fodtKE1H05unJ';
+            UPDATE `${table.prefix}node` SET node_name = '产品发布计划' WHERE node_id = 'fodD3yS99HYxS';
+            UPDATE `${table.prefix}node` SET node_name = '项目管理' WHERE node_id = 'fodg2Spw5etdd';
+            UPDATE `${table.prefix}node` SET node_name = '房产CRM' WHERE node_id = 'fodl4oyVnc2nD';
+            UPDATE `${table.prefix}node` SET node_name = '单项目管理' WHERE node_id = 'fod8gJpFhcXmT';
+            UPDATE `${table.prefix}node` SET node_name = '敏捷冲刺管理' WHERE node_id = 'fodL6SthDbzqV';
+            UPDATE `${table.prefix}node` SET node_name = '用户研究管理' WHERE node_id = 'fodj5XiscfTXy';
+            UPDATE `${table.prefix}node` SET node_name = '视频制作管理' WHERE node_id = 'fodW4GgXouxbx';
+
+            -- 数据表 (type=2)
+            UPDATE `${table.prefix}node` SET node_name = '全部活动' WHERE node_id = 'dstaVzTu8decPrZyCr';
+            UPDATE `${table.prefix}node` SET node_name = '全部班级' WHERE node_id = 'dste9ykPgjHKRqGeWr';
+            UPDATE `${table.prefix}node` SET node_name = '全部课程' WHERE node_id = 'dstPM12TLvUbL3HT6h';
+            UPDATE `${table.prefix}node` SET node_name = '全部教室' WHERE node_id = 'dstyJ9CJV2HqJYVJ9d';
+            UPDATE `${table.prefix}node` SET node_name = 'Bug追踪' WHERE node_id = 'dstYv2a12KQkcGmkuh';
+            UPDATE `${table.prefix}node` SET node_name = '活动成果' WHERE node_id = 'dstlRGnzXDnVMzDpBY';
+            UPDATE `${table.prefix}node` SET node_name = '客户目录' WHERE node_id = 'dstiMCR8KL2Da7ppN6';
+            UPDATE `${table.prefix}node` SET node_name = '联系人' WHERE node_id = 'dstbP1faLDQdN2t8ZW';
+            UPDATE `${table.prefix}node` SET node_name = '联系人' WHERE node_id = 'dsteH98bsuEjJaxwUy';
+            UPDATE `${table.prefix}node` SET node_name = '内容日历' WHERE node_id = 'dstMQdlkyMKqcgZ5Hr';
+            UPDATE `${table.prefix}node` SET node_name = '正式需求看板' WHERE node_id = 'dstaCx7dxRr5sd4Uxd';
+            UPDATE `${table.prefix}node` SET node_name = '需求申请表' WHERE node_id = 'dstvSQ9PNqdpMkQGc9';
+            UPDATE `${table.prefix}node` SET node_name = '关键结果' WHERE node_id = 'dstRS7YqZC1hPQmGww';
+            UPDATE `${table.prefix}node` SET node_name = '洞见要点' WHERE node_id = 'dstSFvSJojwnYzMNm7';
+            UPDATE `${table.prefix}node` SET node_name = '目标' WHERE node_id = 'dstV8QmHgwl8HpNq49';
+            UPDATE `${table.prefix}node` SET node_name = '产品库存' WHERE node_id = 'dstRolRJbUDj4Nya3j';
+            UPDATE `${table.prefix}node` SET node_name = '项目' WHERE node_id = 'dstzhgTR4d8oa84jEq';
+            UPDATE `${table.prefix}node` SET node_name = '项目评估' WHERE node_id = 'dstDNqjqhluX175gAH';
+            UPDATE `${table.prefix}node` SET node_name = '项目列表' WHERE node_id = 'dstYnuB97P2e5BA7Yk';
+            UPDATE `${table.prefix}node` SET node_name = '房产信息' WHERE node_id = 'dstTUY7cC8A5BwSpEE';
+            UPDATE `${table.prefix}node` SET node_name = '采购记录' WHERE node_id = 'dstuA8kdk9Z1WZ4QzY';
+            UPDATE `${table.prefix}node` SET node_name = '发布计划' WHERE node_id = 'dstQiltsPM0Pillyf3';
+            UPDATE `${table.prefix}node` SET node_name = '销售订单' WHERE node_id = 'dst4sWlpojnQCPJavN';
+            UPDATE `${table.prefix}node` SET node_name = '访谈记录' WHERE node_id = 'dstjpim0xTjSSq8f6j';
+            UPDATE `${table.prefix}node` SET node_name = '单项目' WHERE node_id = 'dst9JQFqb5Jew0KQSY';
+            UPDATE `${table.prefix}node` SET node_name = '冲刺任务' WHERE node_id = 'dstKdTyAm9oBTYncuj';
+            UPDATE `${table.prefix}node` SET node_name = '冲刺列表' WHERE node_id = 'dsttHHrJ73v53zeg1P';
+            UPDATE `${table.prefix}node` SET node_name = '研究数据' WHERE node_id = 'dstzPEsxU7XMFK3ndN';
+            UPDATE `${table.prefix}node` SET node_name = '任务' WHERE node_id = 'dstDv8WCvu6caQH7em';
+            UPDATE `${table.prefix}node` SET node_name = '项目任务' WHERE node_id = 'dsteppn64RG6Yx36ie';
+            UPDATE `${table.prefix}node` SET node_name = '用户' WHERE node_id = 'dstqLlWnyPZRvvrxC8';
+            UPDATE `${table.prefix}node` SET node_name = '视频制作流程' WHERE node_id = 'dsteE8USdeh8AfjRJx';
+            UPDATE `${table.prefix}node` SET node_name = '视频状态' WHERE node_id = 'dsth9iPoRTcZpy8xTQ';
+
+            -- 表单 (type=3)
+            UPDATE `${table.prefix}node` SET node_name = '联系人表单' WHERE node_id = 'fommYhhlvkWWGo9PqL';
+            UPDATE `${table.prefix}node` SET node_name = '需求收集表' WHERE node_id = 'fompVfmeQSndTuhG7e';
+            UPDATE `${table.prefix}node` SET node_name = '问题与Bug反馈' WHERE node_id = 'fomjEQuVT4ad4ekd2f';
+            UPDATE `${table.prefix}node` SET node_name = '视频需求收集' WHERE node_id = 'fom9r52gTkmWH79B9b';
+
+            -- 仪表盘 (type=4)
+            UPDATE `${table.prefix}node` SET node_name = '待办清单' WHERE node_id = 'dsbN6w28YZ3FAz0ZAW';
+            UPDATE `${table.prefix}node` SET node_name = '看板' WHERE node_id = 'dsbd5GBiTabw6XVwWm';
+            UPDATE `${table.prefix}node` SET node_name = '看板' WHERE node_id = 'dsbDSY702zFQpKV6GJ';
+            UPDATE `${table.prefix}node` SET node_name = '看板' WHERE node_id = 'dsbmRLKMP7hcL5yuzt';
+            UPDATE `${table.prefix}node` SET node_name = '制作仪表盘' WHERE node_id = 'dsbseD6WLu7Et0c5fc';
+            UPDATE `${table.prefix}node` SET node_name = '项目看板' WHERE node_id = 'dsbLBiWh3ZFhQsdQ1E';
+            UPDATE `${table.prefix}node` SET node_name = '项目看板' WHERE node_id = 'dsbYbJdfrhYgupkDcy';
+            UPDATE `${table.prefix}node` SET node_name = '学习仪表盘' WHERE node_id = 'dsb1QkqYm0x95KGsmE';
+
+            -- 镜像视图 (type=5)
+            UPDATE `${table.prefix}node` SET node_name = '我的任务清单' WHERE node_id = 'mirSx542Xafeh979Nq';
+            UPDATE `${table.prefix}node` SET node_name = '项目时间线' WHERE node_id = 'mirb6RYpsUNJ8wW99j';
+            UPDATE `${table.prefix}node` SET node_name = '路线图' WHERE node_id = 'mirGjomRfQHvsNCDz8';
+            UPDATE `${table.prefix}node` SET node_name = '任务时间线' WHERE node_id = 'mirMMd3JcAShKcYyTS';
+            UPDATE `${table.prefix}node` SET node_name = '时间线' WHERE node_id = 'mirTwUQWGBhrce9Elx';
+            UPDATE `${table.prefix}node` SET node_name = '视频制作时间线' WHERE node_id = 'mirPnNyi7qDL2RJj5Y';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译字段名称：项目管理 - 项目表 (dstzhgTR4d8oa84jEq) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-project-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译"项目管理"模板中项目表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldtYmAisshe5.name', '项目名称',
+                '$.fieldMap.fldtdSfiXln61.name', '项目负责人',
+                '$.fieldMap.fld3F403el9ep.name', '项目阶段',
+                '$.fieldMap.fld3F403el9ep.property.options[0].name', '规划中',
+                '$.fieldMap.fld3F403el9ep.property.options[1].name', '执行中',
+                '$.fieldMap.fld3F403el9ep.property.options[2].name', '发布',
+                '$.fieldMap.fld3F403el9ep.property.options[3].name', '已关闭',
+                '$.fieldMap.fldARY8nX2lcm.name', '开始日期',
+                '$.fieldMap.fld3Oe8tsD3NF.name', '结束日期',
+                '$.fieldMap.fldlQaNBvzgQe.name', '分类',
+                '$.fieldMap.fldlQaNBvzgQe.property.options[0].name', '软件开发',
+                '$.fieldMap.fldlQaNBvzgQe.property.options[1].name', '硬件升级',
+                '$.fieldMap.fldlQaNBvzgQe.property.options[2].name', '网络安全',
+                '$.fieldMap.fldz2YIzgi8bT.name', '关联任务',
+                '$.fieldMap.fldcKq52HoyqY.name', '任务总数'
+            )
+            WHERE dst_id = 'dstzhgTR4d8oa84jEq';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译项目管理 - 任务表 (dstDv8WCvu6caQH7em) -->
+    <changeSet id="V1.13-translate-fields-task-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译"项目管理"模板中任务表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldDScQ33xFkl.name', '任务名称',
+                '$.fieldMap.fldejg5YglaSZ.name', '负责人',
+                '$.fieldMap.fldDQZLS2Py3t.name', '任务状态',
+                '$.fieldMap.fld0Yvnc1a9lN.name', '项目状态',
+                '$.fieldMap.fld71SGhaU2NA.name', '开始日期',
+                '$.fieldMap.fldKiYFYxhesg.name', '结束日期',
+                '$.fieldMap.fldI6xHOEj0Kw.name', '计划工时',
+                '$.fieldMap.fld2v4K7xQX2T.name', '评估',
+                '$.fieldMap.fldpArIFWbj4x.name', '所属项目'
+            )
+            WHERE dst_id = 'dstDv8WCvu6caQH7em';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 OKR追踪 - 目标表 (dstV8QmHgwl8HpNq49) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-okr-obj-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译OKR追踪模板中目标表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldSdYrtoEqqe.name', '目标',
+                '$.fieldMap.fldC3ednVaOkW.name', '负责人',
+                '$.fieldMap.fldGbDTzYvSuk.name', '完成度',
+                '$.fieldMap.fldxg530ocPGk.name', '季度',
+                '$.fieldMap.fldz02Kjx5hEU.name', '层级',
+                '$.fieldMap.fldTcsU9ZD5lF.name', '关联关键结果',
+                '$.fieldMap.fldTuqZv1jprt.name', '关联目标'
+            )
+            WHERE dst_id = 'dstV8QmHgwl8HpNq49';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 OKR追踪 - 关键结果表 (dstRS7YqZC1hPQmGww) -->
+    <changeSet id="V1.13-translate-fields-okr-kr-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译OKR追踪模板中关键结果表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldvYq7ei52jY.name', '关键结果',
+                '$.fieldMap.fld5K12ThFT5K.name', '负责人',
+                '$.fieldMap.fld78zQUiPkwS.name', '完成度',
+                '$.fieldMap.fldLP3LSDmbfp.name', '关联目标',
+                '$.fieldMap.fldRkmAAQyboE.name', '是否完成',
+                '$.fieldMap.fld2lVejXH7tS.name', '季度',
+                '$.fieldMap.fldtZzGJWOynl.name', '最后编辑时间'
+            )
+            WHERE dst_id = 'dstRS7YqZC1hPQmGww';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 敏捷冲刺管理 - 冲刺列表 (dsttHHrJ73v53zeg1P) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-sprint-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译敏捷冲刺管理模板中冲刺列表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldeBmi5wt7wZ.name', '冲刺',
+                '$.fieldMap.fldnMEU1twY9x.name', '目标',
+                '$.fieldMap.fldSfpvTxeZqx.name', '冲刺开始日期',
+                '$.fieldMap.fldumZJRFTwRU.name', '冲刺结束日期',
+                '$.fieldMap.fldcHmtzWt7G1.name', '冲刺任务',
+                '$.fieldMap.fldZ1FBNJvEfw.name', '任务数量',
+                '$.fieldMap.fldap8pbJBBHm.name', '故事点',
+                '$.fieldMap.fldLRmjbf6mAA.name', 'Scrum Master'
+            )
+            WHERE dst_id = 'dsttHHrJ73v53zeg1P';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 敏捷冲刺管理 - 冲刺任务 (dstKdTyAm9oBTYncuj) -->
+    <changeSet id="V1.13-translate-fields-sprint-task-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译敏捷冲刺管理模板中冲刺任务的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldrqPenYzuWq.name', '任务',
+                '$.fieldMap.fldhfxqeQRqBz.name', '负责人',
+                '$.fieldMap.fldteiqtPMQfu.name', '角色',
+                '$.fieldMap.fld5OpaSffjl1.name', '状态',
+                '$.fieldMap.fldHvEFXuKRpq.name', '优先级',
+                '$.fieldMap.fldwKWcgrkl2f.name', '预估故事点',
+                '$.fieldMap.fldVvV7G0tyqk.name', '所属冲刺'
+            )
+            WHERE dst_id = 'dstKdTyAm9oBTYncuj';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 产品发布计划 - 发布计划表 (dstQiltsPM0Pillyf3) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-release-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译产品发布计划模板的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldz8R8BY5KgY.name', '功能特性',
+                '$.fieldMap.fldY0JKuDIOe9.name', '状态',
+                '$.fieldMap.fldmmfXl1H4yC.name', '优先级',
+                '$.fieldMap.fldMOlUZbufoV.name', '紧急程度',
+                '$.fieldMap.fldwK3k7DDQc5.name', '重要程度',
+                '$.fieldMap.fldoviFbPCpl5.name', '用户体验',
+                '$.fieldMap.fldzZVcUNHY29.name', '工作量',
+                '$.fieldMap.fldxstffFDN0w.name', '季度',
+                '$.fieldMap.fldgYdyxZB5Tj.name', '开始日期',
+                '$.fieldMap.fld0BrPV6HpbA.name', '发布日期',
+                '$.fieldMap.fldb8khmyugGV.name', '版本'
+            )
+            WHERE dst_id = 'dstQiltsPM0Pillyf3';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 课程排期 - 全部课程 (dstPM12TLvUbL3HT6h) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-course-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译课程排期模板中课程表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldUkxPqC0pGx.name', '课程名称',
+                '$.fieldMap.fldsDbEbs6j3Q.name', '课程编号',
+                '$.fieldMap.fldZxl7GJGGyl.name', '课程模块',
+                '$.fieldMap.fldqYTzGmPnx0.name', '课程描述',
+                '$.fieldMap.fldxPopUiNfY4.name', '开课状态',
+                '$.fieldMap.fldxE2h9bmnab.name', '上课星期',
+                '$.fieldMap.fldA3u8UH21bY.name', '学分',
+                '$.fieldMap.fldzOR3NUNEDZ.name', '授课教师',
+                '$.fieldMap.fldk06oLYResk.name', '全部班级'
+            )
+            WHERE dst_id = 'dstPM12TLvUbL3HT6h';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 课程排期 - 全部教室 (dstyJ9CJV2HqJYVJ9d) -->
+    <changeSet id="V1.13-translate-fields-room-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译课程排期模板中教室表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldsjrNfoJwsW.name', '教室',
+                '$.fieldMap.fldtuguJgiStm.name', '位置',
+                '$.fieldMap.fldLqCUSgV1ir.name', '所在楼栋',
+                '$.fieldMap.fldJZ4cRYmOOS.name', '容纳人数',
+                '$.fieldMap.fldNRSrfhWO0x.name', '班级数量',
+                '$.fieldMap.fldh5a2UCe3dQ.name', '关联班级',
+                '$.fieldMap.fldyZO31yNlOp.name', '占用时间'
+            )
+            WHERE dst_id = 'dstyJ9CJV2HqJYVJ9d';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 课程排期 - 全部班级 (dste9ykPgjHKRqGeWr) -->
+    <changeSet id="V1.13-translate-fields-class-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译课程排期模板中班级表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldy94q621grk.name', '对应课程',
+                '$.fieldMap.fldsoq3al8UwI.name', '班级编号',
+                '$.fieldMap.fldk2D7UNki9l.name', '模块',
+                '$.fieldMap.fldW3LEoDB8fB.name', '教室',
+                '$.fieldMap.fld3Pk2lQgzTD.name', '上课星期',
+                '$.fieldMap.fldZRq3sNBTpM.name', '星期与时间',
+                '$.fieldMap.fldy3Prw2OQED.name', '开始时间',
+                '$.fieldMap.fldCLVBWzofUi.name', '结束时间',
+                '$.fieldMap.fldcddyxUvm7G.name', '描述'
+            )
+            WHERE dst_id = 'dste9ykPgjHKRqGeWr';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 营销活动管理 - 全部活动 (dstaVzTu8decPrZyCr) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-campaign-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译营销活动管理模板中活动表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldtvk3NN7Bxn.name', '活动名称',
+                '$.fieldMap.fldGmWT1zUqY7.name', '内容',
+                '$.fieldMap.fldkWffuCt6tJ.name', '状态',
+                '$.fieldMap.fldP5tv1USi6F.name', '目标',
+                '$.fieldMap.fldGGqD5y0U3p.name', '营销平台',
+                '$.fieldMap.fldDJcDPzKDYm.name', '开始日期',
+                '$.fieldMap.fldzw6rVUJObH.name', '结束日期',
+                '$.fieldMap.fldGKrVUnIdHC.name', '活动成果',
+                '$.fieldMap.fldCz4e4wJja3.name', '宣传图片'
+            )
+            WHERE dst_id = 'dstaVzTu8decPrZyCr';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 营销活动管理 - 活动成果 (dstlRGnzXDnVMzDpBY) -->
+    <changeSet id="V1.13-translate-fields-campaign-result-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译营销活动管理模板中活动成果表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldJaNsGV3Tyx.name', '关联活动',
+                '$.fieldMap.fld1f1p0gaC6C.name', '活动目标',
+                '$.fieldMap.flddEplQ2ZH3B.name', '达成目标',
+                '$.fieldMap.fldctSb6MWmpQ.name', '展示次数',
+                '$.fieldMap.fld6jdjzJv4xR.name', '点击数',
+                '$.fieldMap.fldmFka8Bx9w7.name', '转化数',
+                '$.fieldMap.fldlq6hYPaeHP.name', '转化率',
+                '$.fieldMap.fldGoCnMrb47o.name', '花费',
+                '$.fieldMap.fldp3LhCZd8Gn.name', '单次点击费用',
+                '$.fieldMap.fldvgjAYx944r.name', '千次展示费用',
+                '$.fieldMap.fldH5lSxP9aXV.name', '每次获客成本'
+            )
+            WHERE dst_id = 'dstlRGnzXDnVMzDpBY';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 内容日历 - 内容日历表 (dstMQdlkyMKqcgZ5Hr) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-content-cal-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译内容日历模板字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldfITwUbcOTp.name', '文章标题',
+                '$.fieldMap.fldbnbpUUcwEU.name', '负责人',
+                '$.fieldMap.fldzheNTPsC4f.name', '状态',
+                '$.fieldMap.fldkb9lnz2BDE.name', '主题',
+                '$.fieldMap.fldb514S8jyVC.name', '发布渠道',
+                '$.fieldMap.fldTYlT6K7seK.name', '开始日期',
+                '$.fieldMap.fldRZJmvT2jxm.name', '结束日期',
+                '$.fieldMap.fldfjIhjAIRkL.name', '预计用时'
+            )
+            WHERE dst_id = 'dstMQdlkyMKqcgZ5Hr';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 库存管理 - 产品库存 (dstRolRJbUDj4Nya3j) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-inventory-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译库存管理模板中产品库存表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldAXPWHoz81X.name', '产品名称',
+                '$.fieldMap.fldiLilUHbkqW.name', '产品编号',
+                '$.fieldMap.fldAB4sUyVYeV.name', '类型',
+                '$.fieldMap.fldR8du9XkWQ1.name', '图片',
+                '$.fieldMap.fldKsvsdviR7p.name', '单价',
+                '$.fieldMap.fldfldiLilUHbkqW.name', '库存数量',
+                '$.fieldMap.fldx3KZfvJxX1.name', '库存',
+                '$.fieldMap.fldfqGmDc3qUx.name', '仓库位置',
+                '$.fieldMap.fldcEFwA4rD76.name', '采购数量',
+                '$.fieldMap.fld72e3BQ5BeY.name', '已售数量',
+                '$.fieldMap.fldahqG0MTyCm.name', '采购记录',
+                '$.fieldMap.fldAUgxAH8n5U.name', '销售订单'
+            )
+            WHERE dst_id = 'dstRolRJbUDj4Nya3j';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 库存管理 - 采购记录 (dstuA8kdk9Z1WZ4QzY) -->
+    <changeSet id="V1.13-translate-fields-purchase-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译库存管理模板中采购记录表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld7l4GtgSstj.name', '订单编号',
+                '$.fieldMap.fldWMpAG6Z982.name', '产品',
+                '$.fieldMap.fldK6romkXAX3.name', '产品名称',
+                '$.fieldMap.fldYOHHerho8g.name', '数量',
+                '$.fieldMap.fldgDlFJglTg0.name', '采购日期',
+                '$.fieldMap.fldseVBueDUkp.name', '状态',
+                '$.fieldMap.fldsH5j971jug.name', '供应商单价',
+                '$.fieldMap.fldie2f20E148.name', '总价',
+                '$.fieldMap.fld4z0kCu4nsZ.name', '供应商'
+            )
+            WHERE dst_id = 'dstuA8kdk9Z1WZ4QzY';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 库存管理 - 销售订单 (dst4sWlpojnQCPJavN) -->
+    <changeSet id="V1.13-translate-fields-sales-order-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译库存管理模板中销售订单表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.dst4sWlpojnQCPJavN.name', '订单列表'
+            )
+            WHERE dst_id = 'dst4sWlpojnQCPJavN';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 用户研究管理 字段 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-user-research-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译用户研究管理中访谈记录表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldgYw2wewsSf.name', '访谈记录',
+                '$.fieldMap.fldnG6mPOMSV2.name', '被访者',
+                '$.fieldMap.fld5EXMRxqQRP.name', '被访用户',
+                '$.fieldMap.fldOA0HtjHETj.name', '访谈类型',
+                '$.fieldMap.fldUPkqhGsXoi.name', '日期',
+                '$.fieldMap.fldQPMGdKbE4L.name', '状态',
+                '$.fieldMap.flddZvomea3b3.name', '研究项目'
+            )
+            WHERE dst_id = 'dstjpim0xTjSSq8f6j';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 用户研究管理 - 研究数据 (dstzPEsxU7XMFK3ndN) -->
+    <changeSet id="V1.13-translate-fields-study-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译用户研究管理中研究数据表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldsARiH32qmN.name', '研究名称',
+                '$.fieldMap.fldayfHga5C9u.name', '用户',
+                '$.fieldMap.fldpym1CVtCOd.name', '关联用户',
+                '$.fieldMap.fldFkFu0lWP2g.name', '访谈记录',
+                '$.fieldMap.fld1miZZUxYC4.name', '记录',
+                '$.fieldMap.fldvT7BK0O0G0.name', '洞见要点',
+                '$.fieldMap.fldqwATKdVuwc.name', '报告',
+                '$.fieldMap.fldE4KFKHeaaz.name', '重要事实'
+            )
+            WHERE dst_id = 'dstzPEsxU7XMFK3ndN';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 内部需求管理 字段 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-internal-request-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译内部需求管理模板中正式需求看板的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld6SiTwLgz5z.name', '正式需求',
+                '$.fieldMap.fldLPdN5oFGiP.name', '需求说明',
+                '$.fieldMap.fldgyHklWoBy0.name', '流程',
+                '$.fieldMap.fldtAEZytYRQu.name', '备注',
+                '$.fieldMap.fldwXTLkEHxk9.name', '子项',
+                '$.fieldMap.fldCikFQP5mi2.name', '质量',
+                '$.fieldMap.fldGwi9uz7e8B.name', '效率',
+                '$.fieldMap.fldJjgfkdPUeC.name', '时间线'
+            )
+            WHERE dst_id = 'dstaCx7dxRr5sd4Uxd';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V1.13-translate-fields-inbound-request-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译内部需求管理模板中需求申请表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldmxXTE9nyAT.name', '需求',
+                '$.fieldMap.fldxkKaXTUS7Z.name', '申请人',
+                '$.fieldMap.fldBiWV1yaWi5.name', '需求描述',
+                '$.fieldMap.fldHk4C5w8BEN.name', '邮箱',
+                '$.fieldMap.fldPHLZ41VpDS.name', '电话',
+                '$.fieldMap.fldWvYSU6kjWp.name', '状态',
+                '$.fieldMap.fldYhXTlTmwCR.name', '正式需求看板',
+                '$.fieldMap.fldRyQeAXYhgE.name', '创建时间'
+            )
+            WHERE dst_id = 'dstvSQ9PNqdpMkQGc9';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 房产CRM 字段 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-real-estate-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译房产CRM模板中房产信息表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldtgTAACAvbF.name', '地址',
+                '$.fieldMap.fldfSm6UCieiX.name', '房产类型',
+                '$.fieldMap.flddGJJvJj8A1.name', '价格',
+                '$.fieldMap.fldWG40rdr9Xu.name', '挂牌状态',
+                '$.fieldMap.fldm3xCBSYwuG.name', '面积(平方英尺)',
+                '$.fieldMap.fldjwwMc2HUuz.name', '单价(每平方英尺)',
+                '$.fieldMap.fldU9Xjs4MNQn.name', '卧室数',
+                '$.fieldMap.fldHEvgE5e6zR.name', '浴室数',
+                '$.fieldMap.fldxvuv42EV0K.name', '在市天数',
+                '$.fieldMap.fldKiWzLm8tGo.name', '上市时间',
+                '$.fieldMap.fldvNz6viZqSm.name', '下市时间',
+                '$.fieldMap.fldlFXDAfBE37.name', '经纪人',
+                '$.fieldMap.fldNGPxGNEPJ1.name', '图片',
+                '$.fieldMap.fldTGEdIHEAhb.name', '潜在客户',
+                '$.fieldMap.fldje6r5NHcCS.name', '下次跟进',
+                '$.fieldMap.fldwpdP2q3RRk.name', '关联房产'
+            )
+            WHERE dst_id = 'dstTUY7cC8A5BwSpEE';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 房产CRM - 联系人 (dstbP1faLDQdN2t8ZW) -->
+    <changeSet id="V1.13-translate-fields-contact-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译房产CRM模板中联系人表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld3eG1iENZpG.name', '联系人',
+                '$.fieldMap.fldwBBP2CxgZC.name', '类型',
+                '$.fieldMap.fldaf5d8PGCGB.name', '邮箱',
+                '$.fieldMap.fldgQRrqLCobA.name', '电话',
+                '$.fieldMap.fldNWUbMQcWiW.name', '优先级',
+                '$.fieldMap.fldA06hhrtMeC.name', '业务状态',
+                '$.fieldMap.fld7ipgsYgbl1.name', '经纪人',
+                '$.fieldMap.fldz8PNBtwu5f.name', '匹配房产',
+                '$.fieldMap.fld6lS0e6vj5k.name', '重要文件'
+            )
+            WHERE dst_id = 'dstbP1faLDQdN2t8ZW';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 视频制作管理 字段 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-video-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译视频制作管理中视频状态表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.flduwRDP89uDW.name', '视频项目',
+                '$.fieldMap.fldhoYySwk14m.name', '客户',
+                '$.fieldMap.fldlmUKdFWZBv.name', '申请人',
+                '$.fieldMap.fldAWcKPbLlik.name', '视频负责人',
+                '$.fieldMap.flddF59FCT7tl.name', '素材文件',
+                '$.fieldMap.fldZTctplyJm9.name', '视频简介',
+                '$.fieldMap.fldFKhCXLslPv.name', '邮箱',
+                '$.fieldMap.fld4UkpzaeSnU.name', '状态',
+                '$.fieldMap.fldgPRa3PnGCK.name', '优先级',
+                '$.fieldMap.fldPjA7ukVuKx.name', '申请日期',
+                '$.fieldMap.fldhNXTNfEaxS.name', '发布日期',
+                '$.fieldMap.fldGZ3WTIU9wB.name', '客户目录',
+                '$.fieldMap.fldTiVn0Nmnnt.name', '视频制作流程',
+                '$.fieldMap.flds88WE2czTZ.name', '相关素材'
+            )
+            WHERE dst_id = 'dsth9iPoRTcZpy8xTQ';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V1.13-translate-fields-video-process-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译视频制作管理中视频制作流程表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld7r8DhnKCWi.name', '视频任务',
+                '$.fieldMap.fld7X3k45X31e.name', '团队成员',
+                '$.fieldMap.fldoNz9RWfVgC.name', '任务状态',
+                '$.fieldMap.fldg0ZarCpXrJ.name', '视频状态',
+                '$.fieldMap.fld97p5EpF5op.name', '关联视频',
+                '$.fieldMap.fldMHw4FSCa9H.name', '链接',
+                '$.fieldMap.fldUhF0xZtBqC.name', '素材文件',
+                '$.fieldMap.fldd5n5hlq1w7.name', '时间线开始',
+                '$.fieldMap.fldmHR097l6DN.name', '时间线结束'
+            )
+            WHERE dst_id = 'dsteE8USdeh8AfjRJx';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 客户项目管理 字段 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-customer-proj-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译客户项目管理中项目列表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldytFn6uzCqa.name', '项目',
+                '$.fieldMap.fldRsqEQ5KZs7.name', '状态',
+                '$.fieldMap.fldPwmRrCQs8a.name', '项目开始',
+                '$.fieldMap.fldMdC5KPqL7w.name', '项目结束',
+                '$.fieldMap.fld2Josz4Kc1z.name', '预估工时',
+                '$.fieldMap.fldf6VAcYWeDQ.name', '客户费用',
+                '$.fieldMap.fldAe1YBGzJf7.name', '联系人',
+                '$.fieldMap.fldTFLKeTQY6E.name', '备注',
+                '$.fieldMap.fld0k5oCRklFb.name', '项目任务'
+            )
+            WHERE dst_id = 'dstYnuB97P2e5BA7Yk';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V1.13-translate-fields-task-of-proj-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译客户项目管理中项目任务表的字段名称</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldytFn6uzCqa.name', '任务',
+                '$.fieldMap.fldfldfSM8X9ugMy.name', '负责人',
+                '$.fieldMap.fldfSM8X9ugMy.name', '负责人',
+                '$.fieldMap.fldcVsm7P2FZV.name', '状态',
+                '$.fieldMap.fldPwmRrCQs8a.name', '任务开始',
+                '$.fieldMap.fldMdC5KPqL7w.name', '任务结束',
+                '$.fieldMap.fld2Josz4Kc1z.name', '预估工时',
+                '$.fieldMap.fldf6VAcYWeDQ.name', '客户费用',
+                '$.fieldMap.fldAe1YBGzJf7.name', '联系人',
+                '$.fieldMap.fldTFLKeTQY6E.name', '相关文件',
+                '$.fieldMap.fldbromZe06FH.name', '添加日期',
+                '$.fieldMap.fldvqLYEKqEjq.name', '关联项目'
+            )
+            WHERE dst_id = 'dsteppn64RG6Yx36ie';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 客户项目管理 - 联系人 (dsteH98bsuEjJaxwUy) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-contacts-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译客户项目管理中联系人表的字段名称及选项</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld3eG1iENZpG.name', '联系人',
+                '$.fieldMap.fld7ipgsYgbl1.name', '公司',
+                '$.fieldMap.fldaf5d8PGCGB.name', '邮箱',
+                '$.fieldMap.fldgQRrqLCobA.name', '电话',
+                '$.fieldMap.fldjdn45U0nqr.name', '客户项目',
+                '$.fieldMap.fldq36WzgjlAL.name', '网站',
+                '$.fieldMap.fldwBBP2CxgZC.name', '类型',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[0].name', '小型企业',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[1].name', '大型企业',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[2].name', '中型企业',
+                '$.fieldMap.fldwIGKtK0Jp9.name', '备注',
+                '$.fieldMap.fldzpjzlB9CwA.name', '职位',
+                '$.fieldMap.fldzpjzlB9CwA.property.options[0].name', 'COO',
+                '$.fieldMap.fldzpjzlB9CwA.property.options[1].name', 'CEO',
+                '$.fieldMap.fldzpjzlB9CwA.property.options[2].name', 'CFO',
+                '$.fieldMap.fldzpjzlB9CwA.property.options[3].name', '销售经理',
+                '$.fieldMap.fldzpjzlB9CwA.property.options[4].name', 'PM'
+            )
+            WHERE dst_id = 'dsteH98bsuEjJaxwUy';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 客户项目管理 - 客户目录 (dstiMCR8KL2Da7ppN6) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-client-dir-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译客户项目管理中客户目录表的字段名称及选项</comment>
+        <sql>
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld3eG1iENZpG.name', '客户名称',
+                '$.fieldMap.fld6lS0e6vj5k.name', '需求文件',
+                '$.fieldMap.fld7ipgsYgbl1.name', '客户负责人',
+                '$.fieldMap.fldFs7qHwHdc2.name', '视频状态',
+                '$.fieldMap.fldaf5d8PGCGB.name', '邮箱',
+                '$.fieldMap.fldgQRrqLCobA.name', '电话',
+                '$.fieldMap.fldq36WzgjlAL.name', '网站',
+                '$.fieldMap.fldwBBP2CxgZC.name', '类型',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[0].name', '小型企业',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[1].name', '大型企业',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[2].name', '中型企业',
+                '$.fieldMap.fldz8PNBtwu5f.name', '视频项目'
+            )
+            WHERE dst_id = 'dstiMCR8KL2Da7ppN6';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译记录数据：产品发布计划 - 功能特性 (dstQiltsPM0Pillyf3) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-records-release-plan-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译产品发布计划模板中各功能特性记录名称</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','性能管理','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='recE91iKAg6mC';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','模板中心改进','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='rec9lOtmZRjTl';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','门户UI改进','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='recA5IgWD59SR';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','新服务器迁移','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='reci1Jj9dUxc2';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','Slack集成','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='recbn9oNnbg2P';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','自动化机器人','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='recHMSviRIoXr';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','P2 Bug修复','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='reckDe7S6tL7k';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','代码审查','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='recVD84UKFn9Y';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','功能测试','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='recawWQmsLJGl';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz8R8BY5KgY',JSON_ARRAY(JSON_OBJECT('text','iOS升级','type',1))) WHERE dst_id='dstQiltsPM0Pillyf3' AND record_id='recHMJgmUgDYj';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译记录数据：敏捷冲刺 - 冲刺任务 (dstKdTyAm9oBTYncuj) -->
+    <changeSet id="V1.13-translate-records-sprint-tasks-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译敏捷冲刺管理模板中冲刺任务记录名称</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','推进应用商店上线','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recB3V9d5YaTT';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','工作空间结构优化','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recCdF2uU3GL6';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','探索自动化功能','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recfpcuwXYiPp';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','更新图表应用','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='rechlQ3Mhjiqh';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','门户UI改进','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recImgTCAjmV2';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','设计多套网页主题','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recpAgAqhXxM5';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','规划分享功能','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recQlpxtjxVZ2';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','开发分享功能','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recQYa8KmI5VD';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','修复P0级Bug','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recR6SMR1gwRz';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','重新设计通知栏','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recRVjSSXoP4d';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','Lark集成','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recylzdmFSoZ5';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldrqPenYzuWq',JSON_ARRAY(JSON_OBJECT('text','分享功能可用性测试','type',1))) WHERE dst_id='dstKdTyAm9oBTYncuj' AND record_id='recYqPBNdjZ3W';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译记录数据：项目管理 - 任务表（剩余英文任务）-->
+    <changeSet id="V1.13-translate-records-pm-tasks-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译项目管理模板中剩余英文任务记录</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','搭建补丁管理系统','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recL0ZurgoqIC';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','监控网络与应用性能','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recLta8FwXRCU';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','识别现有程序中待改进的部分','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recQAgtmNup7R';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','制定灾备/业务连续性计划','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='rect87Xb0eASw';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','监控网络与应用性能','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recTdv2jaT8KH';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','评估硬件可用性','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recUtRvk48YDS';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','安装设备','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recwbL9s3RMnL';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','识别现有程序中待改进的部分','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='reczqWy6nQEVf';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译记录数据：客户项目任务 + 房产关联名 + 客户目录/联系人公司名 -->
+    <changeSet id="V1.13-translate-records-customer-estate-company-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译客户项目任务、房产关联名称、公司名称</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 客户项目任务 (dsteppn64RG6Yx36ie)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','活动管理','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='rec2ETMT6dSvy';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','创建网站','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='rec7rktLWGEEo';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','创建网站','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='recbpxA56662s';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','市场分析','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='recgrhTHzlAjs';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','创建网站','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='recsTURkZXbiX';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','设计logo','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='rect2xEhm23sS';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','市场分析','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='recW4rzSvnmXv';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','视频制作','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='recyLFjYApf5Q';
+            -- 房产CRM (dstTUY7cC8A5BwSpEE) - 关联房产名称
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产一','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='rec0NtrU39VVe';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产四','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='rec9pMAdfm3M';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产三','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recFFj13Wplx';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产五','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recmZJjwiTgT';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产二','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recXjuTBJEmE';
+            -- 客户目录 (dstiMCR8KL2Da7ppN6) - 客户名称
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','维格科技','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recroWqDL8uNo';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','星海集团','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recWcbFmipwk2';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','云鹏信息','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='rec2wAf5CbJBu';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','博远网络','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='reczDwWR8P3CV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','万象传媒','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recAsz3MGkboG';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','鑫源科技','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recl4Q0Q8wMzP';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','腾讯视频','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recc2nsulE4Je';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','阿里云计算','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='reclYMLLi5e5L';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','字节跳动','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recMndk4oJefT';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','华为技术','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recEEW5rUad35';
+            -- 联系人 (dsteH98bsuEjJaxwUy) - 公司字段
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7ipgsYgbl1',JSON_ARRAY(JSON_OBJECT('text','维格科技','type',1))) WHERE dst_id='dsteH98bsuEjJaxwUy' AND record_id='recroWqDL8uNo';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7ipgsYgbl1',JSON_ARRAY(JSON_OBJECT('text','星海集团','type',1))) WHERE dst_id='dsteH98bsuEjJaxwUy' AND record_id='recWcbFmipwk2';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7ipgsYgbl1',JSON_ARRAY(JSON_OBJECT('text','云鹏信息','type',1))) WHERE dst_id='dsteH98bsuEjJaxwUy' AND record_id='rec2wAf5CbJBu';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7ipgsYgbl1',JSON_ARRAY(JSON_OBJECT('text','博远网络','type',1))) WHERE dst_id='dsteH98bsuEjJaxwUy' AND record_id='reczDwWR8P3CV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7ipgsYgbl1',JSON_ARRAY(JSON_OBJECT('text','万象传媒','type',1))) WHERE dst_id='dsteH98bsuEjJaxwUy' AND record_id='recBYPr6pNxTa';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 敏捷冲刺管理 - Bug追踪表 字段名及记录数据 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-bug-tracker-fields-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译Bug追踪表字段名称和单选选项</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld4723e9xCix.name', 'Bug标题',
+                '$.fieldMap.fldorqAQLNaib.name', 'Bug描述',
+                '$.fieldMap.fld2GbuWxXNuK.name', 'Bug截图/视频',
+                '$.fieldMap.fldp2Nndu4pBJ.name', '设备',
+                '$.fieldMap.fld2x6ML6hhPh.name', '浏览器',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[0].name', 'Google Chrome',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[1].name', 'Safari',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[2].name', 'Microsoft Edge',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[3].name', '移动浏览器',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[4].name', 'Firefox',
+                '$.fieldMap.fldODSPDWUUJT.name', '状态',
+                '$.fieldMap.fldODSPDWUUJT.property.options[0].name', '待审核',
+                '$.fieldMap.fldODSPDWUUJT.property.options[1].name', '待开发',
+                '$.fieldMap.fldODSPDWUUJT.property.options[2].name', '修复中',
+                '$.fieldMap.fldODSPDWUUJT.property.options[3].name', '已修复',
+                '$.fieldMap.fldODSPDWUUJT.property.options[4].name', '信息不足',
+                '$.fieldMap.fldODSPDWUUJT.property.options[5].name', '待部署',
+                '$.fieldMap.fldODSPDWUUJT.property.options[6].name', '已知Bug',
+                '$.fieldMap.fldODSPDWUUJT.property.options[7].name', '重复Bug',
+                '$.fieldMap.fldODSPDWUUJT.property.options[8].name', '转为任务',
+                '$.fieldMap.fldcgD91LZTL3.name', 'Bug类型',
+                '$.fieldMap.fldcgD91LZTL3.property.options[0].name', '功能Bug',
+                '$.fieldMap.fldcgD91LZTL3.property.options[1].name', '语法Bug',
+                '$.fieldMap.fldcgD91LZTL3.property.options[2].name', '性能Bug',
+                '$.fieldMap.fldcgD91LZTL3.property.options[3].name', '兼容性Bug',
+                '$.fieldMap.fldUXLNYDnjSg.name', '上报日期',
+                '$.fieldMap.fld7alTcG25ZF.name', '最后更新',
+                '$.fieldMap.fldLbVGfc9czZ.name', '解决用时',
+                '$.fieldMap.fldkJjRy6nj6n.name', '反馈人',
+                '$.fieldMap.fldGsViz6TsIv.name', '编辑者'
+            )
+            WHERE dst_id = 'dstYv2a12KQkcGmkuh';
+        </sql>
+    </changeSet>
+
+    <!-- 翻译 Bug追踪 记录数据 -->
+    <changeSet id="V1.13-translate-bug-tracker-records-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译Bug追踪表中所有Bug标题和描述记录</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','UI组件Bug','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','点击帮助按钮后无任何响应','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='rechJUcbwYK8T';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','页面加载缓慢','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','网站所有页面加载都非常慢，其他网站表现正常','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='rec5V5Jo8sN4e';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','首页加载问题','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','首页加载耗时5分钟才能显示完成','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recwQW11LEfnw';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','搜索功能失效','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','在模板中心搜索时未返回任何结果','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recBDB0SLXkMs';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','注册流程繁琐','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','注册流程过于复杂','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recBEBr0amDGV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','兼容性缺陷','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','应用无法在 Android 8.0 上正常运行','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recCw1hw8333W';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','公式显示错误','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','列表中显示了错误的公式','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recSKVFY8nmjo';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译字段描述（desc）：视频状态、联系人、需求申请表 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-field-descs-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译各模板字段的提示文字（desc）为中文</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 视频状态表 (dsth9iPoRTcZpy8xTQ)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data, '$.fieldMap.fld4UkpzaeSnU.desc', '用于更新视频制作状态', '$.fieldMap.fldAWcKPbLlik.desc', '视频制作的负责人/主导，可以是多人', '$.fieldMap.fldPjA7ukVuKx.desc', '需求提交日期（由表单自动生成）', '$.fieldMap.fldZTctplyJm9.desc', '请详细描述您的视频需求，包括：\n• 目标\n• 目标受众\n• 创意想法', '$.fieldMap.flddF59FCT7tl.desc', '可在此上传相关文件，支持对文件进行持续批注', '$.fieldMap.fldhNXTNfEaxS.desc', '预计发布日期', '$.fieldMap.fldlmUKdFWZBv.desc', '需求申请人姓名（由表单自动生成）', '$.fieldMap.flds88WE2czTZ.desc', '参考资料、创意示例或脚本文件') WHERE dst_id = 'dsth9iPoRTcZpy8xTQ';
+            -- 联系人表 (dsteH98bsuEjJaxwUy)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data, '$.fieldMap.fld7ipgsYgbl1.desc', '可在此分配负责跟进该联系人的团队成员', '$.fieldMap.fldaf5d8PGCGB.desc', '客户邮箱，可用于发送自动化电子邮件', '$.fieldMap.fldgQRrqLCobA.desc', '客户电话，可在移动端直接拨打或设置短信集成', '$.fieldMap.fldq36WzgjlAL.desc', '客户网站链接', '$.fieldMap.fldwBBP2CxgZC.desc', '用于标记该联系人所在企业的类型') WHERE dst_id = 'dsteH98bsuEjJaxwUy';
+            -- 需求申请表 (dstvSQ9PNqdpMkQGc9)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldmxXTE9nyAT.desc', '由申请人填写表单后自动同步', '$.fieldMap.fldxkKaXTUS7Z.desc', '根据创建记录自动填写并指定为需求申请人', '$.fieldMap.fldBiWV1yaWi5.desc', '由申请人填写表单后自动同步', '$.fieldMap.fldHk4C5w8BEN.desc', '由申请人填写表单后自动同步', '$.fieldMap.fldPHLZ41VpDS.desc', '由申请人填写表单后自动同步', '$.fieldMap.fldRyQeAXYhgE.desc', '记录需求收到的日期和时间', '$.fieldMap.fldWvYSU6kjWp.desc', '跟踪与需求申请人的沟通状态') WHERE dst_id = 'dstvSQ9PNqdpMkQGc9';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 内部需求管理-正式需求看板 (dstaCx7dxRr5sd4Uxd) 字段名及选项 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-fields-formal-board-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译内部需求看板字段名称、选项及字段描述</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld16f5G4ps9c.name', '负责人',
+                '$.fieldMap.fld1b7LlnupY6.name', '申请人',
+                '$.fieldMap.fld2ocm8BbnRm.name', '正式需求',
+                '$.fieldMap.fld54VJsyn4Ee.name', '状态',
+                '$.fieldMap.fld54VJsyn4Ee.property.options[0].name', '待素材',
+                '$.fieldMap.fld54VJsyn4Ee.property.options[1].name', '排队中',
+                '$.fieldMap.fld54VJsyn4Ee.property.options[2].name', '需修改',
+                '$.fieldMap.fld54VJsyn4Ee.property.options[3].name', '进行中',
+                '$.fieldMap.fld54VJsyn4Ee.property.options[4].name', '审核中',
+                '$.fieldMap.fld6nyhpx1qXM.name', '类型',
+                '$.fieldMap.fld6nyhpx1qXM.property.options[0].name', '仅设计',
+                '$.fieldMap.fld6nyhpx1qXM.property.options[1].name', '仅文案',
+                '$.fieldMap.fld6nyhpx1qXM.property.options[2].name', '设计+文案',
+                '$.fieldMap.fldDpvT9tAN1o.name', '项目评估',
+                '$.fieldMap.fldESS2LJA4o3.name', '设计师',
+                '$.fieldMap.fldJGZSbTUGva.name', '初稿截止',
+                '$.fieldMap.fldYdERhsomvT.name', '分类',
+                '$.fieldMap.fldYdERhsomvT.property.options[0].name', '产品',
+                '$.fieldMap.fldYdERhsomvT.property.options[1].name', '邮件',
+                '$.fieldMap.fldYdERhsomvT.property.options[2].name', '增长/拉新',
+                '$.fieldMap.fldYdERhsomvT.property.options[3].name', '市场营销',
+                '$.fieldMap.fldYdERhsomvT.property.options[4].name', '社交媒体',
+                '$.fieldMap.fldiSGTx7h87X.name', '上线日期',
+                '$.fieldMap.fldjxeMLfP8ib.name', '子项目',
+                '$.fieldMap.fldkZx9E8Ax5A.name', '终稿截止',
+                '$.fieldMap.fldlN0QD60WG1.name', '文件',
+                '$.fieldMap.fldow3zlbEf4C.name', '创建日期',
+                '$.fieldMap.fldy2N4W4hWiZ.name', '优先级',
+                '$.fieldMap.fld16f5G4ps9c.desc', '分配给该事项的内部负责人',
+                '$.fieldMap.fld1b7LlnupY6.desc', '根据创建记录自动填写并指定为申请人',
+                '$.fieldMap.fld54VJsyn4Ee.desc', '跟踪项目进展状态',
+                '$.fieldMap.fld6nyhpx1qXM.desc', '跟踪该项目所需的创意资源类型',
+                '$.fieldMap.fldESS2LJA4o3.desc', '分配给设计师',
+                '$.fieldMap.fldJGZSbTUGva.desc', '初稿截止时间',
+                '$.fieldMap.fldYdERhsomvT.desc', '用于追踪更多分类信息',
+                '$.fieldMap.fldiSGTx7h87X.desc', '项目上线日期',
+                '$.fieldMap.fldkZx9E8Ax5A.desc', '最终交付截止时间',
+                '$.fieldMap.fldlN0QD60WG1.desc', '上传素材文件供创意制作和评审使用',
+                '$.fieldMap.fldow3zlbEf4C.desc', '根据创建记录自动生成（参见自动化设置）',
+                '$.fieldMap.fldy2N4W4hWiZ.desc', '爱心数越多，优先级越高'
+            )
+            WHERE dst_id = 'dstaCx7dxRr5sd4Uxd';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 敏捷冲刺管理 - Bug追踪表 字段及记录 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-bug-tracker-fields-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译Bug追踪表字段名称、选项及字段描述</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld4723e9xCix.name', 'Bug标题',
+                '$.fieldMap.fldorqAQLNaib.name', 'Bug描述',
+                '$.fieldMap.fld2GbuWxXNuK.name', 'Bug截图/视频',
+                '$.fieldMap.fldp2Nndu4pBJ.name', '设备',
+                '$.fieldMap.fld2x6ML6hhPh.name', '浏览器',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[0].name', 'Google Chrome',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[1].name', 'Safari',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[2].name', 'Microsoft Edge',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[3].name', '移动浏览器',
+                '$.fieldMap.fld2x6ML6hhPh.property.options[4].name', 'Firefox',
+                '$.fieldMap.fldODSPDWUUJT.name', '状态',
+                '$.fieldMap.fldODSPDWUUJT.property.options[0].name', '待审核',
+                '$.fieldMap.fldODSPDWUUJT.property.options[1].name', '待开发',
+                '$.fieldMap.fldODSPDWUUJT.property.options[2].name', '修复中',
+                '$.fieldMap.fldODSPDWUUJT.property.options[3].name', '已修复',
+                '$.fieldMap.fldODSPDWUUJT.property.options[4].name', '信息不足',
+                '$.fieldMap.fldODSPDWUUJT.property.options[5].name', '待部署',
+                '$.fieldMap.fldODSPDWUUJT.property.options[6].name', '已知Bug',
+                '$.fieldMap.fldODSPDWUUJT.property.options[7].name', '重复Bug',
+                '$.fieldMap.fldODSPDWUUJT.property.options[8].name', '转为任务',
+                '$.fieldMap.fldcgD91LZTL3.name', 'Bug类型',
+                '$.fieldMap.fldcgD91LZTL3.property.options[0].name', '功能Bug',
+                '$.fieldMap.fldcgD91LZTL3.property.options[1].name', '语法Bug',
+                '$.fieldMap.fldcgD91LZTL3.property.options[2].name', '性能Bug',
+                '$.fieldMap.fldcgD91LZTL3.property.options[3].name', '兼容性Bug',
+                '$.fieldMap.fldUXLNYDnjSg.name', '上报日期',
+                '$.fieldMap.fld7alTcG25ZF.name', '最后更新',
+                '$.fieldMap.fldLbVGfc9czZ.name', '解决用时',
+                '$.fieldMap.fldkJjRy6nj6n.name', '反馈人',
+                '$.fieldMap.fldGsViz6TsIv.name', '编辑者'
+            )
+            WHERE dst_id = 'dstYv2a12KQkcGmkuh';
+        </sql>
+    </changeSet>
+
+    <changeSet id="V1.13-translate-bug-tracker-records-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译Bug追踪表中所有Bug标题和描述记录</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','UI组件Bug','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','点击帮助按钮后无任何响应','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='rechJUcbwYK8T';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','页面加载缓慢','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','网站所有页面加载都非常慢，其他网站表现正常','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='rec5V5Jo8sN4e';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','首页加载问题','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','首页加载耗时5分钟才能显示完成','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recwQW11LEfnw';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','搜索功能失效','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','在模板中心搜索时未返回任何结果','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recBDB0SLXkMs';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','注册流程繁琐','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','注册流程过于复杂','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recBEBr0amDGV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','兼容性缺陷','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','应用无法在 Android 8.0 上正常运行','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recCw1hw8333W';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','公式显示错误','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','列表中显示了错误的公式','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recSKVFY8nmjo';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 视频状态 - 视频简介记录翻译 + 客户字段选项翻译 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-video-brief-records-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译视频状态表中视频简介字段的记录数据及客户字段选项</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 视频简介记录
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldZTctplyJm9',JSON_ARRAY(JSON_OBJECT('text','关于产品的简短精彩视频','type',1))) WHERE dst_id='dsth9iPoRTcZpy8xTQ' AND record_id='rec2GRqCJRBNz';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldZTctplyJm9',JSON_ARRAY(JSON_OBJECT('text','真实个人风格的客户故事视频','type',1))) WHERE dst_id='dsth9iPoRTcZpy8xTQ' AND record_id='recaGyu89yiHV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldZTctplyJm9',JSON_ARRAY(JSON_OBJECT('text','20秒短视频','type',1))) WHERE dst_id='dsth9iPoRTcZpy8xTQ' AND record_id='recNCDgLvTFtA';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldZTctplyJm9',JSON_ARRAY(JSON_OBJECT('text','20秒趣味产品宣传视频','type',1))) WHERE dst_id='dsth9iPoRTcZpy8xTQ' AND record_id='recQDAMowQLNX';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldZTctplyJm9',JSON_ARRAY(JSON_OBJECT('text','关于公司的简短精彩宣传视频','type',1))) WHERE dst_id='dsth9iPoRTcZpy8xTQ' AND record_id='recXma9pfP2cV';
+            -- 客户字段选项 (fldhoYySwk14m)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data,
+                '$.fieldMap.fldhoYySwk14m.property.options[0].name', '维格科技',
+                '$.fieldMap.fldhoYySwk14m.property.options[1].name', '星海集团',
+                '$.fieldMap.fldhoYySwk14m.property.options[2].name', '云鹏信息',
+                '$.fieldMap.fldhoYySwk14m.property.options[3].name', '博远网络',
+                '$.fieldMap.fldhoYySwk14m.property.options[4].name', '万象传媒',
+                '$.fieldMap.fldhoYySwk14m.property.options[5].name', '鑫源科技',
+                '$.fieldMap.fldhoYySwk14m.property.options[6].name', '腾讯视频',
+                '$.fieldMap.fldhoYySwk14m.property.options[7].name', '阿里云计算',
+                '$.fieldMap.fldhoYySwk14m.property.options[8].name', '字节跳动',
+                '$.fieldMap.fldhoYySwk14m.property.options[9].name', '华为技术'
+            ) WHERE dst_id = 'dsth9iPoRTcZpy8xTQ';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 销售订单 (dst4sWlpojnQCPJavN) - 字段名翻译 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-sales-order-fields-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译库存管理中销售订单表所有字段名称</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld4wslEyN99h.name', '订单号',
+                '$.fieldMap.fld7Yg46JsAB9.name', '单价',
+                '$.fieldMap.fldHbh8zLvU1v.name', '数量',
+                '$.fieldMap.fldKy0sT5ZFNI.name', '下单日期',
+                '$.fieldMap.fldcMbKLZo1bk.name', '产品',
+                '$.fieldMap.flddf2c80un5r.name', '图片',
+                '$.fieldMap.fldsExhY8dq0n.name', '产品名称',
+                '$.fieldMap.fldu6hNCJpM1A.name', '收入'
+            )
+            WHERE dst_id = 'dst4sWlpojnQCPJavN';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 冲刺列表 + 房产CRM视图名 + 潜在客户人名 + 产品发布计划选项 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-misc-fields-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译冲刺列表Scrum Master字段名、房产CRM视图名、产品发布计划Release选项</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 冲刺列表 Scrum Master
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldLRmjbf6mAA.name', 'Scrum负责人') WHERE dst_id = 'dsttHHrJ73v53zeg1P';
+            -- 房产CRM 视图名
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data, '$.views[1].name', '我负责的房产') WHERE dst_id = 'dstTUY7cC8A5BwSpEE';
+            -- 产品发布计划 🚀Release 选项
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldY0JKuDIOe9.property.options[4].name', '🚀发版') WHERE dst_id = 'dstQiltsPM0Pillyf3';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 潜在客户 (dstbP1faLDQdN2t8ZW) - 联系人姓名翻译 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-prospect-names-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译潜在客户表联系人英文姓名为中文</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','许中林','type',1))) WHERE dst_id='dstbP1faLDQdN2t8ZW' AND record_id='rec2wAf5CbJBu';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','谢明','type',1))) WHERE dst_id='dstbP1faLDQdN2t8ZW' AND record_id='recroWqDL8uNo';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','刘海琪','type',1))) WHERE dst_id='dstbP1faLDQdN2t8ZW' AND record_id='recsFOvWW2CMf';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','司雅','type',1))) WHERE dst_id='dstbP1faLDQdN2t8ZW' AND record_id='recWcbFmipwk2';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','麦克','type',1))) WHERE dst_id='dstbP1faLDQdN2t8ZW' AND record_id='reczDwWR8P3CV';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 单项目管理 (dst9JQFqb5Jew0KQSY) - 字段名及选项 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-single-project-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译单项目管理数据表字段名称和单选选项</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld5wcD36YgpC.name', '任务',
+                '$.fieldMap.fldPQ9sTZyYJn.name', '负责人',
+                '$.fieldMap.fld8GDlJXboH9.name', '状态',
+                '$.fieldMap.fld8GDlJXboH9.property.options[0].name', '阻塞中',
+                '$.fieldMap.fld8GDlJXboH9.property.options[1].name', '进行中',
+                '$.fieldMap.fld8GDlJXboH9.property.options[2].name', '已完成',
+                '$.fieldMap.fldzWOilfxzJZ.name', '优先级',
+                '$.fieldMap.fldzWOilfxzJZ.property.options[0].name', '高',
+                '$.fieldMap.fldzWOilfxzJZ.property.options[1].name', '中',
+                '$.fieldMap.fldzWOilfxzJZ.property.options[2].name', '低',
+                '$.fieldMap.fldm2FB3BqJDF.name', '开始时间',
+                '$.fieldMap.fldET8aGpBcba.name', '结束时间',
+                '$.fieldMap.fldZhBIhPgPD1.name', '费用',
+                '$.fieldMap.fld53ANyZ2ZvM.name', '相关文件'
+            )
+            WHERE dst_id = 'dst9JQFqb5Jew0KQSY';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 冲刺任务 (dstKdTyAm9oBTYncuj) - 残留选项翻译 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-sprint-task-opts-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译冲刺任务表残留英文选项(状态/优先级/角色)</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld5OpaSffjl1.property.options[3].name', '已完成',
+                '$.fieldMap.fld5OpaSffjl1.property.options[4].name', '待开始',
+                '$.fieldMap.fld5OpaSffjl1.property.options[5].name', '待办事项',
+                '$.fieldMap.fld5OpaSffjl1.property.options[6].name', '下个冲刺',
+                '$.fieldMap.fld5OpaSffjl1.property.options[7].name', '阻塞中',
+                '$.fieldMap.fldHvEFXuKRpq.property.options[3].name', '紧急',
+                '$.fieldMap.fldHvEFXuKRpq.property.options[4].name', '尽力而为',
+                '$.fieldMap.fldteiqtPMQfu.name', '角色',
+                '$.fieldMap.fldteiqtPMQfu.property.options[0].name', '开发',
+                '$.fieldMap.fldteiqtPMQfu.property.options[1].name', '设计',
+                '$.fieldMap.fldteiqtPMQfu.property.options[2].name', '产品'
+            )
+            WHERE dst_id = 'dstKdTyAm9oBTYncuj';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 客户项目任务 (dsteppn64RG6Yx36ie) - 状态选项 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-customer-task-opts-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译客户项目任务表状态选项</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldcVsm7P2FZV.property.options[0].name', '进行中',
+                '$.fieldMap.fldcVsm7P2FZV.property.options[1].name', '已完成'
+            )
+            WHERE dst_id = 'dsteppn64RG6Yx36ie';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 用户研究 - 用户表 (dstqLlWnyPZRvvrxC8) 字段名 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-user-research-user-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译用户研究管理-用户表字段名</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.flddWtxxJCmKC.name', '用户',
+                '$.fieldMap.fldM74KrynioU.name', '联系人',
+                '$.fieldMap.fldL9vtoHLgSf.name', '联系邮箱',
+                '$.fieldMap.fldCKrw90Uy3n.name', '电话',
+                '$.fieldMap.fldzZqIXegYlb.name', '描述',
+                '$.fieldMap.fldQjVwDqVH8U.name', '研究报告',
+                '$.fieldMap.fldSMiFSneJeb.name', '图片',
+                '$.fieldMap.fldtfmOsu8D75.name', '访谈'
+            )
+            WHERE dst_id = 'dstqLlWnyPZRvvrxC8';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 内部需求管理 - 项目评估 (dstDNqjqhluX175gAH) 字段名 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-project-assessment-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译内部需求管理-项目评估表字段名</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld6SiTwLgz5z.name', '正式需求',
+                '$.fieldMap.fldCikFQP5mi2.name', '质量评分',
+                '$.fieldMap.fldGwi9uz7e8B.name', '效率评分',
+                '$.fieldMap.fldJjgfkdPUeC.name', '时间轴',
+                '$.fieldMap.fldLPdN5oFGiP.name', '需求简报',
+                '$.fieldMap.fldgyHklWoBy0.name', '流程',
+                '$.fieldMap.fldtAEZytYRQu.name', '备注',
+                '$.fieldMap.fldwXTLkEHxk9.name', '子项目'
+            )
+            WHERE dst_id = 'dstDNqjqhluX175gAH';
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data, '$.views[0].name', '评估视图') WHERE dst_id = 'dstDNqjqhluX175gAH';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 课程排期 - 全部课程 (dstPM12TLvUbL3HT6h) 选项 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-course-schedule-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译课程排期 - 全部课程模块选项和上课星期选项</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldZxl7GJGGyl.property.options[0].name', '第一模块',
+                '$.fieldMap.fldZxl7GJGGyl.property.options[1].name', '第二模块',
+                '$.fieldMap.fldZxl7GJGGyl.property.options[2].name', '第三模块',
+                '$.fieldMap.fldZxl7GJGGyl.property.options[3].name', '第四模块',
+                '$.fieldMap.fldxE2h9bmnab.property.options[0].name', '周二',
+                '$.fieldMap.fldxE2h9bmnab.property.options[1].name', '周一',
+                '$.fieldMap.fldxE2h9bmnab.property.options[2].name', '周三',
+                '$.fieldMap.fldxE2h9bmnab.property.options[3].name', '周四',
+                '$.fieldMap.fldxE2h9bmnab.property.options[4].name', '周五'
+            )
+            WHERE dst_id = 'dstPM12TLvUbL3HT6h';
+        </sql>
+    </changeSet>
+
+    <!-- 课程排期 - 全部教室 楼栋名 -->
+    <changeSet id="V1.13-translate-classroom-buildings-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译课程排期-全部教室楼栋名称选项</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldLqCUSgV1ir.property.options[0].name', '⏺️商学院',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[1].name', '🫓荷兰楼',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[2].name', '⚪查尔斯中心',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[3].name', '🟤阅读楼',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[4].name', '🟣论坛中心',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[5].name', '5号牛津广场',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[6].name', '🟢河畔楼',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[7].name', '🟡艾克罗斯中心',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[8].name', '🟠麦肯尼中心',
+                '$.fieldMap.fldLqCUSgV1ir.property.options[9].name', '4号苹果楼'
+            )
+            WHERE dst_id = 'dstyJ9CJV2HqJYVJ9d';
+        </sql>
+    </changeSet>
+
+    <!-- 用户研究 - 研究数据 + 洞见要点 字段名 -->
+    <changeSet id="V1.13-translate-user-research-insights-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译用户研究管理-研究数据和洞见要点表字段名</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 研究数据 (dstzPEsxU7XMFK3ndN)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldpym1CVtCOd.name', '用户') WHERE dst_id = 'dstzPEsxU7XMFK3ndN';
+            -- 洞见要点 (dstSFvSJojwnYzMNm7)
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldcRdlUwy0AN.name', '洞见',
+                '$.fieldMap.fldsqirqUf7Gq.name', '事实依据',
+                '$.fieldMap.fldPBoHYS8vzJ.name', '研究事实',
+                '$.fieldMap.fld0OdijwzYa5.name', '反馈数量',
+                '$.fieldMap.fldJiLohy5X6a.name', '关联访谈',
+                '$.fieldMap.fldRj2Bv0h4z0.name', '改进机会'
+            )
+            WHERE dst_id = 'dstSFvSJojwnYzMNm7';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译字段提示文字 (desc) - 单项目、视频制作流程、客户目录等 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-field-desc-batch2-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译单项目、视频制作流程、客户目录、项目评估等表的字段desc提示文字</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 单项目 (dst9JQFqb5Jew0KQSY)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data,
+                '$.fieldMap.fld5wcD36YgpC.desc', '任务的名称',
+                '$.fieldMap.fld8GDlJXboH9.desc', '任务的当前状态，点击标签可添加或编辑状态选项',
+                '$.fieldMap.fldzWOilfxzJZ.desc', '任务的优先级，点击标签可添加或编辑优先级选项',
+                '$.fieldMap.fldPQ9sTZyYJn.desc', '任务的负责人',
+                '$.fieldMap.fldm2FB3BqJDF.desc', '时间轴中任务的开始日期',
+                '$.fieldMap.fldET8aGpBcba.desc', '时间轴中任务的结束日期',
+                '$.fieldMap.fld53ANyZ2ZvM.desc', '上传与该任务相关的文件，如合同、项目计划、图片等'
+            ) WHERE dst_id = 'dst9JQFqb5Jew0KQSY';
+            -- 视频制作流程 (dsteE8USdeh8AfjRJx)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data,
+                '$.fieldMap.fld7X3k45X31e.desc', '可在此分配负责该任务的团队成员',
+                '$.fieldMap.fld97p5EpF5op.desc', '关联到"视频状态"看板中对应的客户视频需求',
+                '$.fieldMap.fldMHw4FSCa9H.desc', '可在此添加相关文档、研究资料或外部资源链接',
+                '$.fieldMap.fldUhF0xZtBqC.desc', '可在此上传相关文件，支持对文件和图片进行持续批注',
+                '$.fieldMap.fldd5n5hlq1w7.desc', '时间轴字段显示任务的开始日期，可设置提醒通知团队成员',
+                '$.fieldMap.fldg0ZarCpXrJ.desc', '用于更新视频的制作状态',
+                '$.fieldMap.fldmHR097l6DN.desc', '时间轴字段显示任务的结束日期，可设置提醒通知团队成员',
+                '$.fieldMap.fldoNz9RWfVgC.desc', '用于更新每个任务的执行状态'
+            ) WHERE dst_id = 'dsteE8USdeh8AfjRJx';
+            -- 客户目录 (dstiMCR8KL2Da7ppN6)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data,
+                '$.fieldMap.fld6lS0e6vj5k.desc', '可在此上传合同、报价单、需求简报、情绪板等各类文件',
+                '$.fieldMap.fld7ipgsYgbl1.desc', '可在此分配负责该客户的团队成员',
+                '$.fieldMap.fldFs7qHwHdc2.desc', '用于标记该客户的视频制作状态',
+                '$.fieldMap.fldaf5d8PGCGB.desc', '客户邮箱，可用于发送自动化电子邮件',
+                '$.fieldMap.fldgQRrqLCobA.desc', '客户电话，可在移动端直接拨打或设置短信集成',
+                '$.fieldMap.fldq36WzgjlAL.desc', '客户网站链接',
+                '$.fieldMap.fldwBBP2CxgZC.desc', '用于标记该客户所属的业务类型',
+                '$.fieldMap.fldz8PNBtwu5f.desc', '关联到"视频状态"看板中对应的视频需求'
+            ) WHERE dst_id = 'dstiMCR8KL2Da7ppN6';
+            -- 潜在客户 (dstbP1faLDQdN2t8ZW)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data,
+                '$.fieldMap.fld6lS0e6vj5k.desc', '可在此上传合同、报价单、需求简报、情绪板等各类文件',
+                '$.fieldMap.fldaf5d8PGCGB.desc', '客户邮箱，可用于发送自动化电子邮件',
+                '$.fieldMap.fldgQRrqLCobA.desc', '客户电话，可在移动端直接拨打或设置短信集成',
+                '$.fieldMap.fldwBBP2CxgZC.desc', '用于标记该客户的优先级分类',
+                '$.fieldMap.fldz8PNBtwu5f.desc', '关联到对应的匹配房产记录'
+            ) WHERE dst_id = 'dstbP1faLDQdN2t8ZW';
+            -- 项目评估 (dstDNqjqhluX175gAH)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data,
+                '$.fieldMap.fldCikFQP5mi2.desc', '记录评估者对质量的打分',
+                '$.fieldMap.fldGwi9uz7e8B.desc', '记录评估者对效率的打分',
+                '$.fieldMap.fldJjgfkdPUeC.desc', '记录评估者对时间轴的打分',
+                '$.fieldMap.fldLPdN5oFGiP.desc', '记录评估者对需求简报的打分',
+                '$.fieldMap.fldgyHklWoBy0.desc', '记录评估者对流程的打分',
+                '$.fieldMap.fldtAEZytYRQu.desc', '收集评估者的综合备注信息'
+            ) WHERE dst_id = 'dstDNqjqhluX175gAH';
+            -- 研究数据 (dstzPEsxU7XMFK3ndN)
+            UPDATE `${table.prefix}datasheet_meta` SET meta_data = JSON_SET(meta_data,
+                '$.fieldMap.fldvT7BK0O0G0.desc', '用户体验研究中的洞见或发现'
+            ) WHERE dst_id = 'dstzPEsxU7XMFK3ndN';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 apitable_node_desc 节点说明文字（视图顶部描述）-->
+    <!-- ========================================================== -->
+
+
+    <!-- ========================================================== -->
+    <!-- 翻译 apitable_node_desc 节点说明文字（slate 格式）-->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-node-desc-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译各模板节点的说明文字（slate 格式，type:slate）</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dsth9iPoRTcZpy8xTQ', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "使用此看板，您可以一览所有视频项目的进展状态。跟踪视频需求，实时掌握每个项目的制作状态。"}]}], "render": "\u003cp\u003e使用此看板，您可以一览所有视频项目的进展状态。跟踪视频需求，实时掌握每个项目的制作状态。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "使用此看板，您可以一览所有视频项目的进展状态。跟踪视频需求，实时掌握每个项目的制作状态。"}]}], "render": "\u003cp\u003e使用此看板，您可以一览所有视频项目的进展状态。跟踪视频需求，实时掌握每个项目的制作状态。\u003c/p\u003e"}';
+            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dsteH98bsuEjJaxwUy', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "欢迎使用联系人看板！您可以在这里记录和管理所有联系人信息，包括公司、职位、联系方式等。"}]}], "render": "\u003cp\u003e欢迎使用联系人看板！您可以在这里记录和管理所有联系人信息，包括公司、职位、联系方式等。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "欢迎使用联系人看板！您可以在这里记录和管理所有联系人信息，包括公司、职位、联系方式等。"}]}], "render": "\u003cp\u003e欢迎使用联系人看板！您可以在这里记录和管理所有联系人信息，包括公司、职位、联系方式等。\u003c/p\u003e"}';
+            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dst9JQFqb5Jew0KQSY', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板用于管理单个项目。您可以根据项目需求自定义此看板：添加字段、子任务、自动化、仪表盘等功能！"}]}], "render": "\u003cp\u003e此看板用于管理单个项目。您可以根据项目需求自定义此看板：添加字段、子任务、自动化、仪表盘等功能！\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板用于管理单个项目。您可以根据项目需求自定义此看板：添加字段、子任务、自动化、仪表盘等功能！"}]}], "render": "\u003cp\u003e此看板用于管理单个项目。您可以根据项目需求自定义此看板：添加字段、子任务、自动化、仪表盘等功能！\u003c/p\u003e"}';
+            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dstDNqjqhluX175gAH', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板非常适合跨团队和部门追踪工作效率、产出质量和员工满意度。评分汇总可用于辅助决策，指导重点资源的投入方向。"}]}], "render": "\u003cp\u003e此看板非常适合跨团队和部门追踪工作效率、产出质量和员工满意度。评分汇总可用于辅助决策，指导重点资源的投入方向。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板非常适合跨团队和部门追踪工作效率、产出质量和员工满意度。评分汇总可用于辅助决策，指导重点资源的投入方向。"}]}], "render": "\u003cp\u003e此看板非常适合跨团队和部门追踪工作效率、产出质量和员工满意度。评分汇总可用于辅助决策，指导重点资源的投入方向。\u003c/p\u003e"}';
+            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dstaCx7dxRr5sd4Uxd', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板按优先级顺序统一追踪和管理所有创意需求（设计+文案），帮助高层决策者和申请人随时了解各地区或板块的项目进展。"}]}], "render": "\u003cp\u003e此看板按优先级顺序统一追踪和管理所有创意需求（设计+文案），帮助高层决策者和申请人随时了解各地区或板块的项目进展。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板按优先级顺序统一追踪和管理所有创意需求（设计+文案），帮助高层决策者和申请人随时了解各地区或板块的项目进展。"}]}], "render": "\u003cp\u003e此看板按优先级顺序统一追踪和管理所有创意需求（设计+文案），帮助高层决策者和申请人随时了解各地区或板块的项目进展。\u003c/p\u003e"}';
+            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dstvSQ9PNqdpMkQGc9', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "使用此看板可创建表单，用于收集内部需求申请，并实时跟踪申请状态。"}]}], "render": "\u003cp\u003e使用此看板可创建表单，用于收集内部需求申请，并实时跟踪申请状态。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "使用此看板可创建表单，用于收集内部需求申请，并实时跟踪申请状态。"}]}], "render": "\u003cp\u003e使用此看板可创建表单，用于收集内部需求申请，并实时跟踪申请状态。\u003c/p\u003e"}';
+            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dstbP1faLDQdN2t8ZW', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "欢迎使用潜在客户看板！您可以在这里存储和管理所有潜在客户信息，并与工作区的其他数据关联，确保数据始终有上下文。"}]}], "render": "\u003cp\u003e欢迎使用潜在客户看板！您可以在这里存储和管理所有潜在客户信息，并与工作区的其他数据关联，确保数据始终有上下文。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "欢迎使用潜在客户看板！您可以在这里存储和管理所有潜在客户信息，并与工作区的其他数据关联，确保数据始终有上下文。"}]}], "render": "\u003cp\u003e欢迎使用潜在客户看板！您可以在这里存储和管理所有潜在客户信息，并与工作区的其他数据关联，确保数据始终有上下文。\u003c/p\u003e"}';
+            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('fodgHZt1s5CvY', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "跨多个团队和部门进行规划、追踪和管理复杂项目始终充满挑战。使用此模板，您可以更好地进行项目管理，包括任务管理、进度追踪、团队协作等。"}]}], "render": "\u003cp\u003e跨多个团队和部门进行规划、追踪和管理复杂项目始终充满挑战。使用此模板，您可以更好地进行项目管理，包括任务管理、进度追踪、团队协作等。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "跨多个团队和部门进行规划、追踪和管理复杂项目始终充满挑战。使用此模板，您可以更好地进行项目管理，包括任务管理、进度追踪、团队协作等。"}]}], "render": "\u003cp\u003e跨多个团队和部门进行规划、追踪和管理复杂项目始终充满挑战。使用此模板，您可以更好地进行项目管理，包括任务管理、进度追踪、团队协作等。\u003c/p\u003e"}';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 房产CRM - 修复残留英文选项 -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-real-estate-crm-opts-zh-001" author="apitable" labels="template-i18n">
+        <comment>修复房产信息房产类型Apartment和联系人优先级Urgent选项</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 房产信息 房产类型 Apartment -> 公寓
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldfSm6UCieiX.property.options[3].name', '公寓')
+            WHERE dst_id = 'dstTUY7cC8A5BwSpEE';
+            -- 联系人 优先级 Urgent -> 加急
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldNWUbMQcWiW.property.options[3].name', '加急')
+            WHERE dst_id = 'dstbP1faLDQdN2t8ZW';
+        </sql>
+    </changeSet>
+
+    <!-- 访谈记录 状态字段英文选项修复 -->
+    <changeSet id="V1.13-translate-interview-status-opts-zh-001" author="apitable" labels="template-i18n">
+        <comment>修复访谈记录状态字段 No-show/Rescheduled 为中文</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldQPMGdKbE4L.property.options[3].name', '未出席')
+            WHERE dst_id = 'dstjpim0xTjSSq8f6j';
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldQPMGdKbE4L.property.options[4].name', '已改期')
+            WHERE dst_id = 'dstjpim0xTjSSq8f6j';
+        </sql>
+    </changeSet>
+
+    <!-- 表单 resource_meta 英文标题和描述翻译 -->
+    <changeSet id="V1.13-translate-form-resource-meta-zh-001" author="apitable" labels="template-i18n">
+        <comment>修复表单(apitable_resource_meta)英文标题和描述</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 问题与Bug反馈表单
+            UPDATE `${table.prefix}resource_meta`
+            SET meta_data = JSON_SET(meta_data, '$.title', '问题与Bug反馈')
+            WHERE resource_id = 'fomjEQuVT4ad4ekd2f';
+            -- 视频需求收集表单
+            UPDATE `${table.prefix}resource_meta`
+            SET meta_data = JSON_SET(meta_data, '$.title', '视频需求收集')
+            WHERE resource_id = 'fom9r52gTkmWH79B9b';
+            -- 联系人表单
+            UPDATE `${table.prefix}resource_meta`
+            SET meta_data = JSON_SET(JSON_SET(meta_data, '$.title', '联系人表单'),
+                '$.description', JSON_ARRAY(JSON_OBJECT('type', 'paragraph', 'children', JSON_ARRAY(JSON_OBJECT('text', '请添加您计划访谈的用户信息')))))
+            WHERE resource_id = 'fommYhhlvkWWGo9PqL';
+            -- 需求收集表
+            UPDATE `${table.prefix}resource_meta`
+            SET meta_data = JSON_SET(meta_data, '$.title', '需求申请收集表')
+            WHERE resource_id = 'fompVfmeQSndTuhG7e';
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
