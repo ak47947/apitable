@@ -220,6 +220,7 @@ services:
       - DB_USERNAME=${MYSQL_USERNAME}
       - DB_PASSWORD=${MYSQL_PASSWORD}
       - DATABASE_TABLE_PREFIX=${DATABASE_TABLE_PREFIX}
+      - DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE}
       - ACTION=update
     networks:
       - apitable

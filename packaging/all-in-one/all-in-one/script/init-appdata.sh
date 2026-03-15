@@ -2,6 +2,11 @@
 
 set -e
 
+LABELS_ARG=""
+if [ "${DEFAULT_LANGUAGE}" = "zh_CN" ]; then
+    LABELS_ARG="--labels=template-i18n"
+fi
+
 liquibase \
     "--defaultsFile=/liquibase/liquibase.docker.properties" \
     --classpath=/liquibase/changelog \
@@ -26,6 +31,7 @@ liquibase \
     --database-changelog-table-name="${DATABASE_TABLE_PREFIX:=apitable_}db_changelog" \
     --database-changelog-lock-table-name="${DATABASE_TABLE_PREFIX:=apitable_}db_changelog_lock" \
     --url="jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}?characterEncoding=utf8&autoReconnect=true&useSSL=true" \
+    ${LABELS_ARG} \
     update \
     -Dtable.prefix="${DATABASE_TABLE_PREFIX:=apitable_}" \
     -DDB_ENGINE="${DB_ENGINE:=mysql}"

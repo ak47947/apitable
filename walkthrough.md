@@ -31,7 +31,7 @@ make install
 ```bash
 make dataenv
 ```
-执行完毕后，可通过 `make dataenv-ps` 或 Docker 客户端查看五个核心容器是否正常 Running 或已结束 (init-db 会执行并自己结束出场)。在这个过程中，Liquibase（init-db） 会自动执行 SQL 文件完成数据库表结构的构建。
+执行完毕后，可通过 `make dataenv-ps` 或 Docker 客户端查看五个核心容器是否正常 Running 或已结束 (init-db 会执行并自己结束出场)。在这个过程中，Liquibase（init-db） 会自动执行 SQL 文件完成数据库表结构的构建。MySQL 容器会按 `MYSQL_DATABASE` 创建数据库（若不存在），init-db 负责表结构与初始化数据的写入。
 
 ## 4. 启动核心应用服务栈
 在您确保 **第 2，3 步** 执行无误并且中间件容器健康运行后，您需要新开 **3个独立终端界面** 分别启动以下核心服务。由于每个服务都支持热重载（Watch），他们将处于一直监听执行状态。

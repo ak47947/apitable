@@ -35,6 +35,7 @@
             UPDATE `${table.prefix}template_property` SET property_name = '💰 销售与客户' WHERE property_code = 'tpcr05vzH017k';
             UPDATE `${table.prefix}template_property` SET property_name = '🎨 产品设计与UX' WHERE property_code = 'tpcfY7xjLQSUX';
             UPDATE `${table.prefix}template_property` SET property_name = '📚 教育培训' WHERE property_code = 'tpcaEcKUMNfHU';
+            UPDATE `${table.prefix}template_property` SET i18n_name = 'zh_CN' WHERE i18n_name = 'en_US';
         </sql>
     </changeSet>
 
@@ -58,6 +59,7 @@
             UPDATE `${table.prefix}template` SET name = '库存管理' WHERE template_id = 'tplVaVrnBrUZT';
             UPDATE `${table.prefix}template` SET name = 'OKR追踪' WHERE template_id = 'tpluf3QLJ4asF';
             UPDATE `${table.prefix}template` SET name = '课程排期' WHERE template_id = 'tplvV9Y2mJvbS';
+            UPDATE `${table.prefix}template_album` SET i18n_name = 'zh_CN' WHERE i18n_name = 'en_US';
         </sql>
     </changeSet>
 

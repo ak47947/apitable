@@ -22,6 +22,8 @@ ARG SEMVER_FULL
 ENV SEMVER_FULL=${SEMVER_FULL}
 
 CMD ["sh", "-c", "echo \"clearChecksums\"; \
+                    LABELS_ARG=\"\"; \
+                    if [ \"${DEFAULT_LANGUAGE}\" = \"zh_CN\" ]; then LABELS_ARG=\"--labels=template-i18n\"; fi; \
                     docker-entrypoint.sh \
                         --classpath=/liquibase/changelog \
                         --changelog-file=${CHANGELOG_FILE:=db/changelog/db.changelog-master.xml} \
@@ -43,6 +45,7 @@ CMD ["sh", "-c", "echo \"clearChecksums\"; \
                         --database-changelog-table-name=\"${DATABASE_TABLE_PREFIX:=apitable_}db_changelog\" \
                         --database-changelog-lock-table-name=\"${DATABASE_TABLE_PREFIX:=apitable_}db_changelog_lock\" \
                         --url=\"jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}?characterEncoding=utf8&autoReconnect=true&useSSL=true\" \
-                         ${ACTION:=update} \
+                        ${LABELS_ARG} \
+                        ${ACTION:=update} \
                         -Dtable.prefix=${DATABASE_TABLE_PREFIX:=apitable_} \
                         -DDB_ENGINE=${DB_ENGINE:=mysql}"]
