@@ -1861,4 +1861,14 @@
         </sql>
     </changeSet>
 
+    <!-- ========================================================== -->
+    <!-- 中文推荐模板配置(system_config) -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-recommend-config-zh-002" author="apitable" labels="template-i18n">
+        <comment>新增中文推荐模板配置</comment>
+        <sql>
+            INSERT INTO `${table.prefix}system_config` (`id`, `type`, `i18n_name`, `config_map`, `is_deleted`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES (2510825560903945216, 1, 'zh_CN', '{\"top\": [{\"desc\": \"跨多个团队规划、跟踪和管理复杂项目。\", \"color\": \"#262626\", \"image\": \"space/2023/01/29/108c66a0fae5409d9cec7b1c30d60368\", \"title\": \"项目管理\", \"templateId\": \"tplED3FVnX8U6\"}, {\"desc\": \"将包括课程、教室、班级在内的所有信息集中到一个直观的系统中。\", \"color\": \"#262626\", \"image\": \"space/2023/01/29/1267a01f32c54aa1a4af9df13ddd687f\", \"title\": \"课程排期\", \"templateId\": \"tplvV9Y2mJvbS\"}, {\"desc\": \"跟踪、管理和评估每个营销活动。\", \"color\": \"#262626\", \"image\": \"space/2023/01/29/5448db34ed484a6e975a161364cd333a\", \"title\": \"营销活动管理\", \"templateId\": \"tplMQR44UebkN\"}], \"albumGroups\": [], \"templateGroups\": [{\"name\": \"其他用户也喜欢\", \"templateIds\": [\"tpls68R8XJQXH\", \"tplFNqzdFo0qK\", \"tplr0y8Z82JCy\"]}]}', 0, 1, 1, '2026-03-16 22:36:25', '2026-03-16 22:36:25');
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
