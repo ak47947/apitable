@@ -870,6 +870,194 @@
         </sql>
     </changeSet>
 
+    <!-- ========================================================== -->
+    <!-- 翻译记录数据：模板示例英文内容（data 字段） -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-records-templates-zh-002" author="apitable" labels="template-i18n">
+        <comment>翻译模板示例类英文记录数据，保留姓名、邮箱、公司名等真实数据</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 单项目管理 (dst9JQFqb5Jew0KQSY)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld5wcD36YgpC',JSON_ARRAY(JSON_OBJECT('text','任务5','type',1))) WHERE dst_id='dst9JQFqb5Jew0KQSY' AND record_id='recbU2vkiqr1u';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld5wcD36YgpC',JSON_ARRAY(JSON_OBJECT('text','任务4','type',1))) WHERE dst_id='dst9JQFqb5Jew0KQSY' AND record_id='recosWekE10cE';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld5wcD36YgpC',JSON_ARRAY(JSON_OBJECT('text','任务1','type',1))) WHERE dst_id='dst9JQFqb5Jew0KQSY' AND record_id='recqbSn6L00Pc';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld5wcD36YgpC',JSON_ARRAY(JSON_OBJECT('text','任务2','type',1))) WHERE dst_id='dst9JQFqb5Jew0KQSY' AND record_id='recy7CMR8Tv7u';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld5wcD36YgpC',JSON_ARRAY(JSON_OBJECT('text','任务3','type',1))) WHERE dst_id='dst9JQFqb5Jew0KQSY' AND record_id='recYZU4251Ra8';
+            -- 项目管理 - 任务表 (dstDv8WCvu6caQH7em)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','部署终端检测与防护工具','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='rec5m1rGi8x1U';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','采购设备','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='rec8jOtOpXtSp';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','测试并评估新项目','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recDNJ7sr9CY9';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','开发这些改动','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recE6gX8qLmmD';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','开发这些改动','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recIB40P3qcuA';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','测试并评估新项目','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recjU6aTCMQUo';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldDScQ33xFkl',JSON_ARRAY(JSON_OBJECT('text','制定并实施用户访问控制','type',1))) WHERE dst_id='dstDv8WCvu6caQH7em' AND record_id='recqHrvKKEUZo';
+            -- 内容选题 (dstMQdlkyMKqcgZ5Hr)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldkb9lnz2BDE',JSON_ARRAY(JSON_OBJECT('text','全球招聘','type',1))) WHERE dst_id='dstMQdlkyMKqcgZ5Hr' AND record_id='recazmql5XB13';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldkb9lnz2BDE',JSON_ARRAY(JSON_OBJECT('text','远程工作白皮书','type',1))) WHERE dst_id='dstMQdlkyMKqcgZ5Hr' AND record_id='recHebzXJjGAQ';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldkb9lnz2BDE',JSON_ARRAY(JSON_OBJECT('text','会自动打标签的私域解决方案','type',1))) WHERE dst_id='dstMQdlkyMKqcgZ5Hr' AND record_id='recPoQaOqxWFS';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldkb9lnz2BDE',JSON_ARRAY(JSON_OBJECT('text','苹果和微软都在用的NPS一天落地','type',1))) WHERE dst_id='dstMQdlkyMKqcgZ5Hr' AND record_id='recRBYH7M5C5s';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldkb9lnz2BDE',JSON_ARRAY(JSON_OBJECT('text','课程完成后全额退款','type',1))) WHERE dst_id='dstMQdlkyMKqcgZ5Hr' AND record_id='recWhfbRVRxCe';
+            -- 课程与简介 (dstPM12TLvUbL3HT6h)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','数学规划与优化','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='rec85S8Lx6J6P';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','使学生熟悉数学规划与优化方法的理论与应用。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='rec85S8Lx6J6P';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','全球运营管理','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recB0Ke93ombd';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','着重培养学生对运营管理基础的理解。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recB0Ke93ombd';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','知识管理与数字战略','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recBAfmyrfovP';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','探讨组织如何利用信息与知识资源制定有效的数字化战略。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recBAfmyrfovP';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','全球供应链管理：理论与实践','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recDSxDuom8t5';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','提升学生对供应链管理理论与实践的理解。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recDSxDuom8t5';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','数学规划与优化','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='receVlQrzvWfQ';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','使学生熟悉数学规划与优化方法的理论与应用。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='receVlQrzvWfQ';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','业务改进工具、技术与系统','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recgGaPWQUmsL';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','学习质量管理的系统、技术与工具，以及其在制造和服务环境中的应用。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recgGaPWQUmsL';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','商业决策数据分析','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recJ7PR4VAE4q';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','让学生理解用于商业决策的数据分析。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recJ7PR4VAE4q';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','风险、绩效与决策','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recKgnAhI97tG';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','以高级层次介绍决策分析与绩效改进相关主题。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recKgnAhI97tG';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','应用统计与商业预测','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recl5bzI4P6uu';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','覆盖统计分析与建模技术。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recl5bzI4P6uu';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','风险、绩效与决策','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recMZBMHjbfmX';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','以高级层次介绍决策分析与绩效改进相关主题。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recMZBMHjbfmX';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','应用统计与商业预测','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recrfCyIvQKk2';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','覆盖统计分析与建模技术。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recrfCyIvQKk2';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','战略项目组织','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recS7xBAHbKgF';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','通过提供一系列工具、技术与批判性思维方式，探索如何设计并领导项目组织以取得成功。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recS7xBAHbKgF';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','数学规划与优化','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recSocGqzMP9P';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','使学生熟悉数学规划与优化方法的理论与应用。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recSocGqzMP9P';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','风险、绩效与决策','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recUbPt7IbhjL';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','以高级层次介绍决策分析与绩效改进相关主题。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recUbPt7IbhjL';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','商业决策数据分析','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recukwn1Gr7Ix';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','让学生理解用于商业决策的数据分析。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recukwn1Gr7Ix';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','商业决策数据分析','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recvLYxKWEvJF';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','让学生理解用于商业决策的数据分析。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recvLYxKWEvJF';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldUkxPqC0pGx',JSON_ARRAY(JSON_OBJECT('text','战略供应链管理','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recZNLuD2kD9j';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldqYTzGmPnx0',JSON_ARRAY(JSON_OBJECT('text','包含战略供应链管理导论、买自制理论、供应商组合管理、供应商选择与谈判。','type',1))) WHERE dst_id='dstPM12TLvUbL3HT6h' AND record_id='recZNLuD2kD9j';
+            -- OKR (dstRS7YqZC1hPQmGww)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','社交媒体粉丝增至20000','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='rec0YAePXu459';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','举办12场一对一交流','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='rec18GJxeEgGS';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','发布10个客户故事','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recc0LZkHWcEF';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','全团队敏捷迭代','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='reciv5AdslDaX';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','5次点击内完成功能访问','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recKeMnnVkSef';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','需求响应及时性提升至30%','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recLpRrUVb7yT';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','分析竞品并撰写12份报告','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recPdFCSiX1kM';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','网站流量增长30%','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recPhqC5m0h1i';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','每月全员会议','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recQn3ilkCHOw';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','进行120次客户拜访','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recTkOMYJMNpo';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','NPS提升至80%','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recTScb5wC9AB';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','与至少12位KOL合作','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recu7tRlXWeSR';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldvYq7ei52jY',JSON_ARRAY(JSON_OBJECT('text','客户转化率提升至10%','type',1))) WHERE dst_id='dstRS7YqZC1hPQmGww' AND record_id='recWOHUtGkksG';
+            -- 需求申请与表单 (dstSFvSJojwnYzMNm7, dstvSQ9PNqdpMkQGc9)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldRj2Bv0h4z0',JSON_ARRAY(JSON_OBJECT('text','修复该Bug','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='rec2UjX7ReyvC';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldcRdlUwy0AN',JSON_ARRAY(JSON_OBJECT('text','“下载附件”功能有Bug','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='rec2UjX7ReyvC';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldRj2Bv0h4z0',JSON_ARRAY(JSON_OBJECT('text','为“模板中心”提供用户指南','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='rec4l3P55dtHt';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldcRdlUwy0AN',JSON_ARRAY(JSON_OBJECT('text','缺少“模板中心”的新用户指南','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='rec4l3P55dtHt';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldRj2Bv0h4z0',JSON_ARRAY(JSON_OBJECT('text','优化“创建新数据表”按钮位置','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='recbNkEC2YpGB';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldcRdlUwy0AN',JSON_ARRAY(JSON_OBJECT('text','“创建新数据表”按钮位置不合理','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='recbNkEC2YpGB';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldRj2Bv0h4z0',JSON_ARRAY(JSON_OBJECT('text','添加评论区','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='recQSMYgQ0xzm';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldcRdlUwy0AN',JSON_ARRAY(JSON_OBJECT('text','缺少添加评论的功能','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='recQSMYgQ0xzm';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldRj2Bv0h4z0',JSON_ARRAY(JSON_OBJECT('text','为“新增视图”提供用户指南','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='recZfSJclGP5o';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldcRdlUwy0AN',JSON_ARRAY(JSON_OBJECT('text','缺少“新增视图”的新用户指南','type',1))) WHERE dst_id='dstSFvSJojwnYzMNm7' AND record_id='recZfSJclGP5o';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldBiWV1yaWi5',JSON_ARRAY(JSON_OBJECT('text','透视表支持百分比显示','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='rec9puFAiWEk9';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldmxXTE9nyAT',JSON_ARRAY(JSON_OBJECT('text','透视表支持百分比显示','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='rec9puFAiWEk9';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldBiWV1yaWi5',JSON_ARRAY(JSON_OBJECT('text','图表小组件设置分组维度时也支持拆分多选值','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='recc0SR3XTSwY';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldmxXTE9nyAT',JSON_ARRAY(JSON_OBJECT('text','图表小组件设置分组维度时也支持拆分多选值','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='recc0SR3XTSwY';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldBiWV1yaWi5',JSON_ARRAY(JSON_OBJECT('text','评分希望设置范围和数据','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='recp4JMxMbVff';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldmxXTE9nyAT',JSON_ARRAY(JSON_OBJECT('text','评分希望设置范围和数据','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='recp4JMxMbVff';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldBiWV1yaWi5',JSON_ARRAY(JSON_OBJECT('text','分享公开链接时新增加密功能','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='recsukEyOMrHr';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldmxXTE9nyAT',JSON_ARRAY(JSON_OBJECT('text','分享公开链接时新增加密功能','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='recsukEyOMrHr';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldBiWV1yaWi5',JSON_ARRAY(JSON_OBJECT('text','机器人定时任务提醒','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='recsUWxYZmv7x';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldmxXTE9nyAT',JSON_ARRAY(JSON_OBJECT('text','机器人定时任务提醒','type',1))) WHERE dst_id='dstvSQ9PNqdpMkQGc9' AND record_id='recsUWxYZmv7x';
+            -- 房产CRM 地址字段 (dstTUY7cC8A5BwSpEE)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtgTAACAvbF',JSON_ARRAY(JSON_OBJECT('text','地址1','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='rec0NtrU39VVe';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtgTAACAvbF',JSON_ARRAY(JSON_OBJECT('text','地址4','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='rec9pMAdfm3M9';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtgTAACAvbF',JSON_ARRAY(JSON_OBJECT('text','地址3','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recFFj13WplxN';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtgTAACAvbF',JSON_ARRAY(JSON_OBJECT('text','地址5','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recmZJjwiTgTB';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtgTAACAvbF',JSON_ARRAY(JSON_OBJECT('text','地址2','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recXjuTBJEmEQ';
+            -- OKR 目标与主题 (dstV8QmHgwl8HpNq49)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','用户增长','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='rec5mlMenADCM';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz02Kjx5hEU',JSON_ARRAY(JSON_OBJECT('text','目标1','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='rec5mlMenADCM';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','提升客户体验','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recc7BILyU5oR';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','提升公司排名','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='reccLuYwqNsG4';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz02Kjx5hEU',JSON_ARRAY(JSON_OBJECT('text','终极目标','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='reccLuYwqNsG4';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','打造良好品牌口碑','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recjzNBdcmUy6';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz02Kjx5hEU',JSON_ARRAY(JSON_OBJECT('text','目标2','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recjzNBdcmUy6';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','使远程办公常态化','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recKUAt2wmli1';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','提高用户留存','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recmdzAeL1Lgs';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','销售增长','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recMqU7WEZ1aV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz02Kjx5hEU',JSON_ARRAY(JSON_OBJECT('text','目标4','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recMqU7WEZ1aV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','建设团队文化','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recs4bH1zprXb';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldz02Kjx5hEU',JSON_ARRAY(JSON_OBJECT('text','目标3','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recs4bH1zprXb';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldSdYrtoEqqe',JSON_ARRAY(JSON_OBJECT('text','推广内容发布','type',1))) WHERE dst_id='dstV8QmHgwl8HpNq49' AND record_id='recVA96aLJmKW';
+            -- 客户项目任务 (dstYnuB97P2e5BA7Yk)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','项目3','type',1))) WHERE dst_id='dstYnuB97P2e5BA7Yk' AND record_id='rec1Iaj1FliqZ';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','项目1','type',1))) WHERE dst_id='dstYnuB97P2e5BA7Yk' AND record_id='rec2ETMT6dSvy';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','项目5','type',1))) WHERE dst_id='dstYnuB97P2e5BA7Yk' AND record_id='rec7JJs47KBTV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','项目4','type',1))) WHERE dst_id='dstYnuB97P2e5BA7Yk' AND record_id='recsiZyRXwDCj';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','项目2','type',1))) WHERE dst_id='dstYnuB97P2e5BA7Yk' AND record_id='recW4rzSvnmXv';
+            -- 内部需求看板 (dstaCx7dxRr5sd4Uxd)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld2ocm8BbnRm',JSON_ARRAY(JSON_OBJECT('text','评分希望设置范围和数据','type',1))) WHERE dst_id='dstaCx7dxRr5sd4Uxd' AND record_id='rec688Ndr3DcX';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld2ocm8BbnRm',JSON_ARRAY(JSON_OBJECT('text','分享公开链接时新增加密功能','type',1))) WHERE dst_id='dstaCx7dxRr5sd4Uxd' AND record_id='recatpLl6v2CD';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld2ocm8BbnRm',JSON_ARRAY(JSON_OBJECT('text','透视表支持百分比显示','type',1))) WHERE dst_id='dstaCx7dxRr5sd4Uxd' AND record_id='recLx966juvtW';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld2ocm8BbnRm',JSON_ARRAY(JSON_OBJECT('text','图表小组件设置分组维度时也支持拆分多选值','type',1))) WHERE dst_id='dstaCx7dxRr5sd4Uxd' AND record_id='recmrP1TqBpij';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld2ocm8BbnRm',JSON_ARRAY(JSON_OBJECT('text','机器人定时任务提醒','type',1))) WHERE dst_id='dstaCx7dxRr5sd4Uxd' AND record_id='recuwpjFslZen';
+            -- 营销活动 (dstaVzTu8decPrZyCr)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldGmWT1zUqY7',JSON_ARRAY(JSON_OBJECT('text','了解旅行者偏爱旅行的10个理由','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recba7aEJOG3V';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldP5tv1USi6F',JSON_ARRAY(JSON_OBJECT('text','转化流失用户','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recba7aEJOG3V';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtvk3NN7Bxn',JSON_ARRAY(JSON_OBJECT('text','流失用户活动','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recba7aEJOG3V';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldGmWT1zUqY7',JSON_ARRAY(JSON_OBJECT('text','🎉旅行快乐日','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recfi2Mj2HSqC';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldP5tv1USi6F',JSON_ARRAY(JSON_OBJECT('text','触达人群，提升互动','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recfi2Mj2HSqC';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtvk3NN7Bxn',JSON_ARRAY(JSON_OBJECT('text','品牌活动','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recfi2Mj2HSqC';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldGmWT1zUqY7',JSON_ARRAY(JSON_OBJECT('text','带你去从未去过的海','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recFwlcoAazR7';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldP5tv1USi6F',JSON_ARRAY(JSON_OBJECT('text','引导用户到商店下载应用','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recFwlcoAazR7';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtvk3NN7Bxn',JSON_ARRAY(JSON_OBJECT('text','应用商店活动','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recFwlcoAazR7';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldGmWT1zUqY7',JSON_ARRAY(JSON_OBJECT('text','🎁收获：看看我们为你发现了什么','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recHMaGeKG0OD';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldP5tv1USi6F',JSON_ARRAY(JSON_OBJECT('text','引导注册并产生线索','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recHMaGeKG0OD';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtvk3NN7Bxn',JSON_ARRAY(JSON_OBJECT('text','线索获取活动','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recHMaGeKG0OD';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldGmWT1zUqY7',JSON_ARRAY(JSON_OBJECT('text','与我们一起探索世界','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recXCSkkjvTck';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldP5tv1USi6F',JSON_ARRAY(JSON_OBJECT('text','为主站引流','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recXCSkkjvTck';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtvk3NN7Bxn',JSON_ARRAY(JSON_OBJECT('text','搜索活动','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recXCSkkjvTck';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldGmWT1zUqY7',JSON_ARRAY(JSON_OBJECT('text','🦋旅行让生活更美好','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recXJCIbt1D2F';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldP5tv1USi6F',JSON_ARRAY(JSON_OBJECT('text','将新用户转化为高价值购买者','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recXJCIbt1D2F';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtvk3NN7Bxn',JSON_ARRAY(JSON_OBJECT('text','现有用户活动','type',1))) WHERE dst_id='dstaVzTu8decPrZyCr' AND record_id='recXJCIbt1D2F';
+            -- 视频制作流程 (dsteE8USdeh8AfjRJx)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','Facebook版本','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='rec19GAKWd1yw';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','创意备注','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='rec2j7m9L8ZcJ';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','粗剪与修剪','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='rec4d6yCWmSJE';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','撰写脚本','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='rec4Lr6xgl88w';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','添加音乐','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recAZp68sl3Yf';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','授权表','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recBfzDzBDMk5';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','创意备注','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recdc88S3uYHx';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','选角','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recHAQxTZzT5D';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','录制配音','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='rechJ7PHj0XgQ';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','客户反馈','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recn32V4pqNCA';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','终剪','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recPu3E4CgmBV';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','设备准备','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recwxTLvr4Hl1';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','拍摄','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recxAMKSy2Mmv';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','撰写脚本','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='recyJ5thD4Mkh';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld7r8DhnKCWi',JSON_ARRAY(JSON_OBJECT('text','设备准备','type',1))) WHERE dst_id='dsteE8USdeh8AfjRJx' AND record_id='reczijBER7tub';
+            -- 转化指标 (dstlRGnzXDnVMzDpBY)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.flddEplQ2ZH3B',JSON_ARRAY(JSON_OBJECT('text','转化率 &gt; 5%','type',1))) WHERE dst_id='dstlRGnzXDnVMzDpBY' AND record_id='recIcBXFLhRbf';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.flddEplQ2ZH3B',JSON_ARRAY(JSON_OBJECT('text','CPA &lt; $50','type',1))) WHERE dst_id='dstlRGnzXDnVMzDpBY' AND record_id='recOjCSvfZvNz';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.flddEplQ2ZH3B',JSON_ARRAY(JSON_OBJECT('text','CPA &lt; $25','type',1))) WHERE dst_id='dstlRGnzXDnVMzDpBY' AND record_id='recpKBNbbL8gA';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.flddEplQ2ZH3B',JSON_ARRAY(JSON_OBJECT('text','CPA &lt; $480','type',1))) WHERE dst_id='dstlRGnzXDnVMzDpBY' AND record_id='recTfUr8EEvWs';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.flddEplQ2ZH3B',JSON_ARRAY(JSON_OBJECT('text','转化率 &gt; 20%','type',1))) WHERE dst_id='dstlRGnzXDnVMzDpBY' AND record_id='recVNiPw3dBjU';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.flddEplQ2ZH3B',JSON_ARRAY(JSON_OBJECT('text','CPM &lt; $1.5','type',1))) WHERE dst_id='dstlRGnzXDnVMzDpBY' AND record_id='recYq8Swz1JZ6';
+            -- 用户反馈/洞察 (dstzPEsxU7XMFK3ndN)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldE4KFKHeaaz',JSON_ARRAY(JSON_OBJECT('text','不小心点击了“创建新数据表”按钮','type',1))) WHERE dst_id='dstzPEsxU7XMFK3ndN' AND record_id='rec93H9zAurG3';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldE4KFKHeaaz',JSON_ARRAY(JSON_OBJECT('text','下载附件时遇到问题','type',1))) WHERE dst_id='dstzPEsxU7XMFK3ndN' AND record_id='recdf1LHVD19A';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldE4KFKHeaaz',JSON_ARRAY(JSON_OBJECT('text','未找到“创建新数据表”按钮','type',1))) WHERE dst_id='dstzPEsxU7XMFK3ndN' AND record_id='recKPlgqgNV42';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldE4KFKHeaaz',JSON_ARRAY(JSON_OBJECT('text','初次使用时未找到“模板中心”','type',1))) WHERE dst_id='dstzPEsxU7XMFK3ndN' AND record_id='reclDvFdyD3Us';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldE4KFKHeaaz',JSON_ARRAY(JSON_OBJECT('text','表示希望支持添加评论','type',1))) WHERE dst_id='dstzPEsxU7XMFK3ndN' AND record_id='recQGGf8EfwHQ';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldE4KFKHeaaz',JSON_ARRAY(JSON_OBJECT('text','初次使用时未找到“新增视图”按钮','type',1))) WHERE dst_id='dstzPEsxU7XMFK3ndN' AND record_id='recS4zfGvSznT';
+            -- 项目名称 (dstzhgTR4d8oa84jEq)
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtYmAisshe5',JSON_ARRAY(JSON_OBJECT('text','项目阿尔法','type',1))) WHERE dst_id='dstzhgTR4d8oa84jEq' AND record_id='rec3zjcnEzkjL';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtYmAisshe5',JSON_ARRAY(JSON_OBJECT('text','项目明日香','type',1))) WHERE dst_id='dstzhgTR4d8oa84jEq' AND record_id='recdfmCcjiswW';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtYmAisshe5',JSON_ARRAY(JSON_OBJECT('text','项目风暴','type',1))) WHERE dst_id='dstzhgTR4d8oa84jEq' AND record_id='receZIquheLWq';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtYmAisshe5',JSON_ARRAY(JSON_OBJECT('text','项目闪电','type',1))) WHERE dst_id='dstzhgTR4d8oa84jEq' AND record_id='recRDJlUYccFQ';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldtYmAisshe5',JSON_ARRAY(JSON_OBJECT('text','项目魔法','type',1))) WHERE dst_id='dstzhgTR4d8oa84jEq' AND record_id='recSIbcICPBUp';
+        </sql>
+    </changeSet>
+
     <!-- 翻译记录数据：项目管理 - 任务表（剩余英文任务）-->
     <changeSet id="V1.13-translate-records-pm-tasks-zh-001" author="apitable" labels="template-i18n">
         <comment>翻译项目管理模板中剩余英文任务记录</comment>
@@ -902,10 +1090,10 @@
             UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldytFn6uzCqa',JSON_ARRAY(JSON_OBJECT('text','视频制作','type',1))) WHERE dst_id='dsteppn64RG6Yx36ie' AND record_id='recyLFjYApf5Q';
             -- 房产CRM (dstTUY7cC8A5BwSpEE) - 关联房产名称
             UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产一','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='rec0NtrU39VVe';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产四','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='rec9pMAdfm3M';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产三','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recFFj13Wplx';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产五','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recmZJjwiTgT';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产二','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recXjuTBJEmE';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产四','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='rec9pMAdfm3M9';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产三','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recFFj13WplxN';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产五','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recmZJjwiTgTB';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldwpdP2q3RRk',JSON_ARRAY(JSON_OBJECT('text','房产二','type',1))) WHERE dst_id='dstTUY7cC8A5BwSpEE' AND record_id='recXjuTBJEmEQ';
             -- 客户目录 (dstiMCR8KL2Da7ppN6) - 客户名称
             UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','维格科技','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recroWqDL8uNo';
             UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld3eG1iENZpG',JSON_ARRAY(JSON_OBJECT('text','星海集团','type',1))) WHERE dst_id='dstiMCR8KL2Da7ppN6' AND record_id='recWcbFmipwk2';
