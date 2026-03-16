@@ -1804,6 +1804,24 @@
         </sql>
     </changeSet>
 
+    <!-- 修复 node_desc.render 中 u003c/u003e 转义 -->
+    <changeSet id="V1.13-fix-node-desc-render-escape-zh-001" author="apitable" labels="template-i18n">
+        <comment>将 node_desc.description.render 的 u003c/u003e 还原为 &lt; &gt;，避免前端直接显示转义串</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}node_desc`
+            SET description = JSON_SET(
+                description,
+                '$.render',
+                REPLACE(
+                    REPLACE(JSON_UNQUOTE(JSON_EXTRACT(description, '$.render')), 'u003c', '&lt;'),
+                    'u003e', '&gt;'
+                )
+            )
+            WHERE JSON_UNQUOTE(JSON_EXTRACT(description, '$.render')) LIKE '%u003c%';
+        </sql>
+    </changeSet>
+
     <!-- ========================================================== -->
     <!-- 房产CRM - 修复残留英文选项 -->
     <!-- ========================================================== -->
@@ -1833,6 +1851,262 @@
             UPDATE `${table.prefix}datasheet_meta`
             SET meta_data = JSON_SET(meta_data, '$.fieldMap.fldQPMGdKbE4L.property.options[4].name', '已改期')
             WHERE dst_id = 'dstjpim0xTjSSq8f6j';
+        </sql>
+    </changeSet>
+
+    <!-- 访谈记录 状态/类型字段剩余英文选项修复 + 仪表盘组件标题翻译 -->
+    <changeSet id="V1.13-translate-interview-en-opts-and-dsb-widgets-zh-001" author="apitable" labels="template-i18n">
+        <comment>修复访谈记录状态/类型字段英文选项，以及学习仪表盘组件标题</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 访谈记录：状态字段 Canceled/Complete/Planned
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldQPMGdKbE4L.property.options[0].name', '已取消',
+                '$.fieldMap.fldQPMGdKbE4L.property.options[1].name', '已完成',
+                '$.fieldMap.fldQPMGdKbE4L.property.options[2].name', '已计划'
+            )
+            WHERE dst_id = 'dstjpim0xTjSSq8f6j';
+
+            -- 访谈记录：访谈类型字段 Initial Interview/Followup Session
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldOA0HtjHETj.property.options[0].name', '初次访谈',
+                '$.fieldMap.fldOA0HtjHETj.property.options[1].name', '跟进访谈'
+            )
+            WHERE dst_id = 'dstjpim0xTjSSq8f6j';
+
+            -- 学习仪表盘组件标题翻译（widget.name）
+            UPDATE `${table.prefix}widget`
+            SET name = '会话状态概览'
+            WHERE node_id = 'dsb1QkqYm0x95KGsmE' AND name = 'Session Status Overview';
+            UPDATE `${table.prefix}widget`
+            SET name = '已完成会话'
+            WHERE node_id = 'dsb1QkqYm0x95KGsmE' AND name = 'Complete Sessions';
+        </sql>
+    </changeSet>
+
+    <!-- datasheet_meta 残留英文统一汉化 -->
+    <changeSet id="V1.13-translate-datasheet-meta-remaining-zh-001" author="apitable" labels="template-i18n">
+        <comment>统一汉化 datasheet_meta 中残留英文（字段选项、视图名等）</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 研发需求看板（dstKdTyAm9oBTYncuj）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld5OpaSffjl1.property.options[0].name', '进行中',
+                '$.fieldMap.fld5OpaSffjl1.property.options[1].name', '待评审',
+                '$.fieldMap.fld5OpaSffjl1.property.options[2].name', '待部署',
+                '$.fieldMap.fldHvEFXuKRpq.property.options[0].name', '高',
+                '$.fieldMap.fldHvEFXuKRpq.property.options[1].name', '中',
+                '$.fieldMap.fldHvEFXuKRpq.property.options[2].name', '低',
+                '$.views[1].name', '看板'
+            )
+            WHERE dst_id = 'dstKdTyAm9oBTYncuj';
+
+            -- 课程排期（dstPM12TLvUbL3HT6h）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldxPopUiNfY4.property.options[0].name', '秋季',
+                '$.fieldMap.fldxPopUiNfY4.property.options[1].name', '春季'
+            )
+            WHERE dst_id = 'dstPM12TLvUbL3HT6h';
+
+            -- 产品库存（dstRolRJbUDj4Nya3j）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldAB4sUyVYeV.property.options[0].name', '饮料',
+                '$.fieldMap.fldAB4sUyVYeV.property.options[1].name', '薯片与零食',
+                '$.fieldMap.fldAB4sUyVYeV.property.options[2].name', '巧克力/糖果/口香糖',
+                '$.fieldMap.fldAXPWHoz81X.property.options[0].name', '可乐',
+                '$.fieldMap.fldAXPWHoz81X.property.options[1].name', '薯片',
+                '$.fieldMap.fldAXPWHoz81X.property.options[2].name', '矿泉水',
+                '$.fieldMap.fldAXPWHoz81X.property.options[3].name', '柠檬汁',
+                '$.fieldMap.fldAXPWHoz81X.property.options[4].name', '橙汁',
+                '$.fieldMap.fldAXPWHoz81X.property.options[5].name', '饼干',
+                '$.fieldMap.fldAXPWHoz81X.property.options[6].name', '巧克力',
+                '$.fieldMap.fldAXPWHoz81X.property.options[7].name', '啤酒',
+                '$.fieldMap.fldAXPWHoz81X.property.options[8].name', '葡萄酒',
+                '$.fieldMap.fldAXPWHoz81X.property.options[9].name', '酸奶',
+                '$.fieldMap.fldAXPWHoz81X.property.options[10].name', '儿童糖果',
+                '$.fieldMap.fldAXPWHoz81X.property.options[11].name', '口香糖',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[0].name', '一区-货架1',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[1].name', '一区-货架2',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[2].name', '一区-货架3',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[3].name', '二区-货架1',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[4].name', '二区-货架2'
+            )
+            WHERE dst_id = 'dstRolRJbUDj4Nya3j';
+
+            -- 房产信息（dstTUY7cC8A5BwSpEE）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldWG40rdr9Xu.property.options[0].name', '合同已发送',
+                '$.fieldMap.fldWG40rdr9Xu.property.options[1].name', '已出价',
+                '$.fieldMap.fldWG40rdr9Xu.property.options[2].name', '已售出',
+                '$.fieldMap.fldWG40rdr9Xu.property.options[3].name', '在售',
+                '$.fieldMap.fldfSm6UCieiX.property.options[0].name', '住宅',
+                '$.fieldMap.fldfSm6UCieiX.property.options[1].name', '公寓',
+                '$.fieldMap.fldfSm6UCieiX.property.options[2].name', '楼房'
+            )
+            WHERE dst_id = 'dstTUY7cC8A5BwSpEE';
+
+            -- OKR追踪（dstV8QmHgwl8HpNq49）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldxg530ocPGk.property.options[0].name', '2022年第一季度',
+                '$.fieldMap.fldxg530ocPGk.property.options[1].name', '2022年第二季度',
+                '$.fieldMap.fldxg530ocPGk.property.options[2].name', '2022年第三季度',
+                '$.fieldMap.fldxg530ocPGk.property.options[3].name', '2022年第四季度',
+                '$.views[0].name', '目标与关键成果结构',
+                '$.views[1].name', '2022年目标',
+                '$.views[2].name', '2022年第二季度目标'
+            )
+            WHERE dst_id = 'dstV8QmHgwl8HpNq49';
+
+            -- 客户项目（dstYnuB97P2e5BA7Yk）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldRsqEQ5KZs7.property.options[0].name', '进行中',
+                '$.fieldMap.fldRsqEQ5KZs7.property.options[1].name', '已完成'
+            )
+            WHERE dst_id = 'dstYnuB97P2e5BA7Yk';
+
+            -- 营销活动管理（dstaVzTu8decPrZyCr）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldGGqD5y0U3p.property.options[0].name', '谷歌',
+                '$.fieldMap.fldGGqD5y0U3p.property.options[1].name', '脸书',
+                '$.fieldMap.fldGGqD5y0U3p.property.options[2].name', '照片墙',
+                '$.fieldMap.fldGGqD5y0U3p.property.options[3].name', '推特',
+                '$.fieldMap.fldGGqD5y0U3p.property.options[4].name', '电子邮件',
+                '$.fieldMap.fldkWffuCt6tJ.property.options[0].name', '已上线',
+                '$.fieldMap.fldkWffuCt6tJ.property.options[1].name', '规划中',
+                '$.fieldMap.fldkWffuCt6tJ.property.options[2].name', '已结束',
+                '$.fieldMap.fldkWffuCt6tJ.property.options[3].name', '待定'
+            )
+            WHERE dst_id = 'dstaVzTu8decPrZyCr';
+
+            -- 潜在客户（dstbP1faLDQdN2t8ZW）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldNWUbMQcWiW.property.options[0].name', '高',
+                '$.fieldMap.fldNWUbMQcWiW.property.options[1].name', '低',
+                '$.fieldMap.fldNWUbMQcWiW.property.options[2].name', '中',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[0].name', '潜在客户',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[1].name', '客户',
+                '$.fieldMap.fldwBBP2CxgZC.property.options[2].name', '经纪人'
+            )
+            WHERE dst_id = 'dstbP1faLDQdN2t8ZW';
+
+            -- 联系人（dsteH98bsuEjJaxwUy）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldzpjzlB9CwA.property.options[0].name', '首席运营官',
+                '$.fieldMap.fldzpjzlB9CwA.property.options[1].name', '首席执行官',
+                '$.fieldMap.fldzpjzlB9CwA.property.options[2].name', '首席财务官',
+                '$.fieldMap.fldzpjzlB9CwA.property.options[4].name', '项目经理'
+            )
+            WHERE dst_id = 'dsteH98bsuEjJaxwUy';
+
+            -- 视频状态（dsth9iPoRTcZpy8xTQ）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld4UkpzaeSnU.property.options[0].name', '后期制作',
+                '$.fieldMap.fld4UkpzaeSnU.property.options[1].name', '拍摄制作',
+                '$.fieldMap.fld4UkpzaeSnU.property.options[2].name', '前期策划',
+                '$.fieldMap.fld4UkpzaeSnU.property.options[3].name', '已完成',
+                '$.fieldMap.fldgPRa3PnGCK.property.options[0].name', '中',
+                '$.fieldMap.fldgPRa3PnGCK.property.options[1].name', '低',
+                '$.fieldMap.fldgPRa3PnGCK.property.options[2].name', '高',
+                '$.fieldMap.fldZTctplyJm9.desc', '请详细描述您的视频需求，包括：\n• 目标\n• 目标受众\n• 创意想法'
+            )
+            WHERE dst_id = 'dsth9iPoRTcZpy8xTQ';
+
+            -- 采购记录（dstuA8kdk9Z1WZ4QzY）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld4z0kCu4nsZ.property.options[0].name', '饮料工作室',
+                '$.fieldMap.fld4z0kCu4nsZ.property.options[1].name', '零食工作室',
+                '$.fieldMap.fld4z0kCu4nsZ.property.options[2].name', '字母路工作室',
+                '$.fieldMap.fldseVBueDUkp.property.options[0].name', '已到货',
+                '$.fieldMap.fldseVBueDUkp.property.options[1].name', '运输中',
+                '$.fieldMap.fldseVBueDUkp.property.options[2].name', '包装中',
+                '$.fieldMap.fldseVBueDUkp.property.options[3].name', '订单已发送'
+            )
+            WHERE dst_id = 'dstuA8kdk9Z1WZ4QzY';
+
+            -- 需求收集表单（dstvSQ9PNqdpMkQGc9）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldWvYSU6kjWp.property.options[0].name', '网页',
+                '$.fieldMap.fldWvYSU6kjWp.property.options[1].name', '应用'
+            )
+            WHERE dst_id = 'dstvSQ9PNqdpMkQGc9';
+        </sql>
+    </changeSet>
+
+    <!-- datasheet_meta 残留英文二次补齐 -->
+    <changeSet id="V1.13-translate-datasheet-meta-remaining-zh-002" author="apitable" labels="template-i18n">
+        <comment>补齐仍含英文的选项/视图名，确保纯中文</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 产品库存（dstRolRJbUDj4Nya3j）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldfqGmDc3qUx.property.options[0].name', '一区-货架1',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[1].name', '一区-货架2',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[2].name', '一区-货架3',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[3].name', '二区-货架1',
+                '$.fieldMap.fldfqGmDc3qUx.property.options[4].name', '二区-货架2'
+            )
+            WHERE dst_id = 'dstRolRJbUDj4Nya3j';
+
+            -- OKR追踪（dstV8QmHgwl8HpNq49）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldxg530ocPGk.property.options[0].name', '2022年第一季度',
+                '$.fieldMap.fldxg530ocPGk.property.options[1].name', '2022年第二季度',
+                '$.fieldMap.fldxg530ocPGk.property.options[2].name', '2022年第三季度',
+                '$.fieldMap.fldxg530ocPGk.property.options[3].name', '2022年第四季度',
+                '$.views[0].name', '目标与关键成果结构',
+                '$.views[2].name', '2022年第二季度目标'
+            )
+            WHERE dst_id = 'dstV8QmHgwl8HpNq49';
+
+            -- 营销活动管理（dstaVzTu8decPrZyCr）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fldGGqD5y0U3p.property.options[1].name', '脸书',
+                '$.fieldMap.fldGGqD5y0U3p.property.options[2].name', '照片墙',
+                '$.fieldMap.fldGGqD5y0U3p.property.options[3].name', '推特'
+            )
+            WHERE dst_id = 'dstaVzTu8decPrZyCr';
+
+            -- 采购记录（dstuA8kdk9Z1WZ4QzY）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_SET(
+                meta_data,
+                '$.fieldMap.fld4z0kCu4nsZ.property.options[2].name', '字母路工作室'
+            )
+            WHERE dst_id = 'dstuA8kdk9Z1WZ4QzY';
         </sql>
     </changeSet>
 
