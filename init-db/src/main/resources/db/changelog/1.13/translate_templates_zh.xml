@@ -143,6 +143,41 @@
             UPDATE `${table.prefix}node` SET node_name = '任务时间线' WHERE node_id = 'mirMMd3JcAShKcYyTS';
             UPDATE `${table.prefix}node` SET node_name = '时间线' WHERE node_id = 'mirTwUQWGBhrce9Elx';
             UPDATE `${table.prefix}node` SET node_name = '视频制作时间线' WHERE node_id = 'mirPnNyi7qDL2RJj5Y';
+
+            -- 同步数据表名 (datasheet.dst_name)
+            UPDATE `${table.prefix}datasheet` SET dst_name = 'Bug追踪' WHERE dst_id = 'dstYv2a12KQkcGmkuh';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '联系人' WHERE dst_id = 'dstbP1faLDQdN2t8ZW';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '联系人' WHERE dst_id = 'dsteH98bsuEjJaxwUy';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '单项目' WHERE dst_id = 'dst9JQFqb5Jew0KQSY';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '项目评估' WHERE dst_id = 'dstDNqjqhluX175gAH';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '正式需求看板' WHERE dst_id = 'dstaCx7dxRr5sd4Uxd';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '需求申请表' WHERE dst_id = 'dstvSQ9PNqdpMkQGc9';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '项目任务' WHERE dst_id = 'dsteppn64RG6Yx36ie';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '视频状态' WHERE dst_id = 'dsth9iPoRTcZpy8xTQ';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '客户目录' WHERE dst_id = 'dstiMCR8KL2Da7ppN6';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '房产信息' WHERE dst_id = 'dstTUY7cC8A5BwSpEE';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '销售订单' WHERE dst_id = 'dst4sWlpojnQCPJavN';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '全部活动' WHERE dst_id = 'dstaVzTu8decPrZyCr';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '任务' WHERE dst_id = 'dstDv8WCvu6caQH7em';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '全部班级' WHERE dst_id = 'dste9ykPgjHKRqGeWr';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '视频制作流程' WHERE dst_id = 'dsteE8USdeh8AfjRJx';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '访谈记录' WHERE dst_id = 'dstjpim0xTjSSq8f6j';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '冲刺任务' WHERE dst_id = 'dstKdTyAm9oBTYncuj';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '活动成果' WHERE dst_id = 'dstlRGnzXDnVMzDpBY';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '内容日历' WHERE dst_id = 'dstMQdlkyMKqcgZ5Hr';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '全部课程' WHERE dst_id = 'dstPM12TLvUbL3HT6h';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '发布计划' WHERE dst_id = 'dstQiltsPM0Pillyf3';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '用户' WHERE dst_id = 'dstqLlWnyPZRvvrxC8';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '产品库存' WHERE dst_id = 'dstRolRJbUDj4Nya3j';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '关键结果' WHERE dst_id = 'dstRS7YqZC1hPQmGww';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '洞见要点' WHERE dst_id = 'dstSFvSJojwnYzMNm7';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '冲刺列表' WHERE dst_id = 'dsttHHrJ73v53zeg1P';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '采购记录' WHERE dst_id = 'dstuA8kdk9Z1WZ4QzY';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '目标' WHERE dst_id = 'dstV8QmHgwl8HpNq49';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '全部教室' WHERE dst_id = 'dstyJ9CJV2HqJYVJ9d';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '项目列表' WHERE dst_id = 'dstYnuB97P2e5BA7Yk';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '项目' WHERE dst_id = 'dstzhgTR4d8oa84jEq';
+            UPDATE `${table.prefix}datasheet` SET dst_name = '研究数据' WHERE dst_id = 'dstzPEsxU7XMFK3ndN';
         </sql>
     </changeSet>
 
@@ -817,6 +852,24 @@
         </sql>
     </changeSet>
 
+    <!-- 翻译记录数据：敏捷冲刺 - 冲刺列表 (dsttHHrJ73v53zeg1P) -->
+    <changeSet id="V1.13-translate-records-sprint-list-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译敏捷冲刺管理模板中冲刺列表的记录名称与目标</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 5.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','SEO与广告','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='rec1wyEcrkrEP';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 9.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','市场营销','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recA2GhZh9h5H';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 7.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','SEO与广告','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recb112Sq6DtA';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 8.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','市场营销','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recCO6qCXTzfB';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 4.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','提升高级功能并改善UI体验','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recCrJG0QOSDn';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 3.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','提升高级功能并改善UI体验','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recjaUrD1cLmM';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 2.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','提升高级功能并改善UI体验','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recMBbFAeFcqX';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 1.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','提升高级功能并改善UI体验','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recqS4OM0OnYB';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 10.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','市场营销','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recWK9TKGEVMa';
+            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fldap8pbJBBHm',JSON_ARRAY(JSON_OBJECT('text','冲刺 6.0🛠️','type',1)),'$.fldnMEU1twY9x',JSON_ARRAY(JSON_OBJECT('text','SEO与广告','type',1))) WHERE dst_id='dsttHHrJ73v53zeg1P' AND record_id='recWvSlJxJhse';
+        </sql>
+    </changeSet>
+
     <!-- 翻译记录数据：项目管理 - 任务表（剩余英文任务）-->
     <changeSet id="V1.13-translate-records-pm-tasks-zh-001" author="apitable" labels="template-i18n">
         <comment>翻译项目管理模板中剩余英文任务记录</comment>
@@ -1004,64 +1057,6 @@
         </sql>
     </changeSet>
 
-    <!-- ========================================================== -->
-    <!-- 翻译 敏捷冲刺管理 - Bug追踪表 字段及记录 -->
-    <!-- ========================================================== -->
-    <changeSet id="V1.13-translate-bug-tracker-fields-zh-001" author="apitable" labels="template-i18n">
-        <comment>翻译Bug追踪表字段名称、选项及字段描述</comment>
-        <sql>
-            SET NAMES utf8mb4;
-            UPDATE `${table.prefix}datasheet_meta`
-            SET meta_data = JSON_SET(
-                meta_data,
-                '$.fieldMap.fld4723e9xCix.name', 'Bug标题',
-                '$.fieldMap.fldorqAQLNaib.name', 'Bug描述',
-                '$.fieldMap.fld2GbuWxXNuK.name', 'Bug截图/视频',
-                '$.fieldMap.fldp2Nndu4pBJ.name', '设备',
-                '$.fieldMap.fld2x6ML6hhPh.name', '浏览器',
-                '$.fieldMap.fld2x6ML6hhPh.property.options[0].name', 'Google Chrome',
-                '$.fieldMap.fld2x6ML6hhPh.property.options[1].name', 'Safari',
-                '$.fieldMap.fld2x6ML6hhPh.property.options[2].name', 'Microsoft Edge',
-                '$.fieldMap.fld2x6ML6hhPh.property.options[3].name', '移动浏览器',
-                '$.fieldMap.fld2x6ML6hhPh.property.options[4].name', 'Firefox',
-                '$.fieldMap.fldODSPDWUUJT.name', '状态',
-                '$.fieldMap.fldODSPDWUUJT.property.options[0].name', '待审核',
-                '$.fieldMap.fldODSPDWUUJT.property.options[1].name', '待开发',
-                '$.fieldMap.fldODSPDWUUJT.property.options[2].name', '修复中',
-                '$.fieldMap.fldODSPDWUUJT.property.options[3].name', '已修复',
-                '$.fieldMap.fldODSPDWUUJT.property.options[4].name', '信息不足',
-                '$.fieldMap.fldODSPDWUUJT.property.options[5].name', '待部署',
-                '$.fieldMap.fldODSPDWUUJT.property.options[6].name', '已知Bug',
-                '$.fieldMap.fldODSPDWUUJT.property.options[7].name', '重复Bug',
-                '$.fieldMap.fldODSPDWUUJT.property.options[8].name', '转为任务',
-                '$.fieldMap.fldcgD91LZTL3.name', 'Bug类型',
-                '$.fieldMap.fldcgD91LZTL3.property.options[0].name', '功能Bug',
-                '$.fieldMap.fldcgD91LZTL3.property.options[1].name', '语法Bug',
-                '$.fieldMap.fldcgD91LZTL3.property.options[2].name', '性能Bug',
-                '$.fieldMap.fldcgD91LZTL3.property.options[3].name', '兼容性Bug',
-                '$.fieldMap.fldUXLNYDnjSg.name', '上报日期',
-                '$.fieldMap.fld7alTcG25ZF.name', '最后更新',
-                '$.fieldMap.fldLbVGfc9czZ.name', '解决用时',
-                '$.fieldMap.fldkJjRy6nj6n.name', '反馈人',
-                '$.fieldMap.fldGsViz6TsIv.name', '编辑者'
-            )
-            WHERE dst_id = 'dstYv2a12KQkcGmkuh';
-        </sql>
-    </changeSet>
-
-    <changeSet id="V1.13-translate-bug-tracker-records-zh-001" author="apitable" labels="template-i18n">
-        <comment>翻译Bug追踪表中所有Bug标题和描述记录</comment>
-        <sql>
-            SET NAMES utf8mb4;
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','UI组件Bug','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','点击帮助按钮后无任何响应','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='rechJUcbwYK8T';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','页面加载缓慢','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','网站所有页面加载都非常慢，其他网站表现正常','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='rec5V5Jo8sN4e';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','首页加载问题','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','首页加载耗时5分钟才能显示完成','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recwQW11LEfnw';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','搜索功能失效','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','在模板中心搜索时未返回任何结果','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recBDB0SLXkMs';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','注册流程繁琐','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','注册流程过于复杂','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recBEBr0amDGV';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','兼容性缺陷','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','应用无法在 Android 8.0 上正常运行','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recCw1hw8333W';
-            UPDATE `${table.prefix}datasheet_record` SET data = JSON_SET(data,'$.fld4723e9xCix',JSON_ARRAY(JSON_OBJECT('text','公式显示错误','type',1)),'$.fldorqAQLNaib',JSON_ARRAY(JSON_OBJECT('text','列表中显示了错误的公式','type',1))) WHERE dst_id='dstYv2a12KQkcGmkuh' AND record_id='recSKVFY8nmjo';
-        </sql>
-    </changeSet>
 
     <!-- ========================================================== -->
     <!-- 视频状态 - 视频简介记录翻译 + 客户字段选项翻译 -->
@@ -1398,25 +1393,226 @@
     </changeSet>
 
     <!-- ========================================================== -->
-    <!-- 翻译 apitable_node_desc 节点说明文字（视图顶部描述）-->
+    <!-- 翻译所有视图名称（完整版） -->
     <!-- ========================================================== -->
-
-
-    <!-- ========================================================== -->
-    <!-- 翻译 apitable_node_desc 节点说明文字（slate 格式）-->
-    <!-- ========================================================== -->
-    <changeSet id="V1.13-translate-node-desc-zh-001" author="apitable" labels="template-i18n">
-        <comment>翻译各模板节点的说明文字（slate 格式，type:slate）</comment>
+    <changeSet id="V1.13-translate-all-views-zh-001" author="apitable" labels="template-i18n">
+        <comment>批量翻译模板视图名称</comment>
         <sql>
             SET NAMES utf8mb4;
-            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dsth9iPoRTcZpy8xTQ', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "使用此看板，您可以一览所有视频项目的进展状态。跟踪视频需求，实时掌握每个项目的制作状态。"}]}], "render": "\u003cp\u003e使用此看板，您可以一览所有视频项目的进展状态。跟踪视频需求，实时掌握每个项目的制作状态。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "使用此看板，您可以一览所有视频项目的进展状态。跟踪视频需求，实时掌握每个项目的制作状态。"}]}], "render": "\u003cp\u003e使用此看板，您可以一览所有视频项目的进展状态。跟踪视频需求，实时掌握每个项目的制作状态。\u003c/p\u003e"}';
-            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dsteH98bsuEjJaxwUy', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "欢迎使用联系人看板！您可以在这里记录和管理所有联系人信息，包括公司、职位、联系方式等。"}]}], "render": "\u003cp\u003e欢迎使用联系人看板！您可以在这里记录和管理所有联系人信息，包括公司、职位、联系方式等。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "欢迎使用联系人看板！您可以在这里记录和管理所有联系人信息，包括公司、职位、联系方式等。"}]}], "render": "\u003cp\u003e欢迎使用联系人看板！您可以在这里记录和管理所有联系人信息，包括公司、职位、联系方式等。\u003c/p\u003e"}';
-            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dst9JQFqb5Jew0KQSY', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板用于管理单个项目。您可以根据项目需求自定义此看板：添加字段、子任务、自动化、仪表盘等功能！"}]}], "render": "\u003cp\u003e此看板用于管理单个项目。您可以根据项目需求自定义此看板：添加字段、子任务、自动化、仪表盘等功能！\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板用于管理单个项目。您可以根据项目需求自定义此看板：添加字段、子任务、自动化、仪表盘等功能！"}]}], "render": "\u003cp\u003e此看板用于管理单个项目。您可以根据项目需求自定义此看板：添加字段、子任务、自动化、仪表盘等功能！\u003c/p\u003e"}';
-            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dstDNqjqhluX175gAH', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板非常适合跨团队和部门追踪工作效率、产出质量和员工满意度。评分汇总可用于辅助决策，指导重点资源的投入方向。"}]}], "render": "\u003cp\u003e此看板非常适合跨团队和部门追踪工作效率、产出质量和员工满意度。评分汇总可用于辅助决策，指导重点资源的投入方向。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板非常适合跨团队和部门追踪工作效率、产出质量和员工满意度。评分汇总可用于辅助决策，指导重点资源的投入方向。"}]}], "render": "\u003cp\u003e此看板非常适合跨团队和部门追踪工作效率、产出质量和员工满意度。评分汇总可用于辅助决策，指导重点资源的投入方向。\u003c/p\u003e"}';
-            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dstaCx7dxRr5sd4Uxd', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板按优先级顺序统一追踪和管理所有创意需求（设计+文案），帮助高层决策者和申请人随时了解各地区或板块的项目进展。"}]}], "render": "\u003cp\u003e此看板按优先级顺序统一追踪和管理所有创意需求（设计+文案），帮助高层决策者和申请人随时了解各地区或板块的项目进展。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "此看板按优先级顺序统一追踪和管理所有创意需求（设计+文案），帮助高层决策者和申请人随时了解各地区或板块的项目进展。"}]}], "render": "\u003cp\u003e此看板按优先级顺序统一追踪和管理所有创意需求（设计+文案），帮助高层决策者和申请人随时了解各地区或板块的项目进展。\u003c/p\u003e"}';
-            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dstvSQ9PNqdpMkQGc9', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "使用此看板可创建表单，用于收集内部需求申请，并实时跟踪申请状态。"}]}], "render": "\u003cp\u003e使用此看板可创建表单，用于收集内部需求申请，并实时跟踪申请状态。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "使用此看板可创建表单，用于收集内部需求申请，并实时跟踪申请状态。"}]}], "render": "\u003cp\u003e使用此看板可创建表单，用于收集内部需求申请，并实时跟踪申请状态。\u003c/p\u003e"}';
-            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('dstbP1faLDQdN2t8ZW', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "欢迎使用潜在客户看板！您可以在这里存储和管理所有潜在客户信息，并与工作区的其他数据关联，确保数据始终有上下文。"}]}], "render": "\u003cp\u003e欢迎使用潜在客户看板！您可以在这里存储和管理所有潜在客户信息，并与工作区的其他数据关联，确保数据始终有上下文。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "欢迎使用潜在客户看板！您可以在这里存储和管理所有潜在客户信息，并与工作区的其他数据关联，确保数据始终有上下文。"}]}], "render": "\u003cp\u003e欢迎使用潜在客户看板！您可以在这里存储和管理所有潜在客户信息，并与工作区的其他数据关联，确保数据始终有上下文。\u003c/p\u003e"}';
-            INSERT INTO `${table.prefix}node_desc` (node_id, description) VALUES ('fodgHZt1s5CvY', '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "跨多个团队和部门进行规划、追踪和管理复杂项目始终充满挑战。使用此模板，您可以更好地进行项目管理，包括任务管理、进度追踪、团队协作等。"}]}], "render": "\u003cp\u003e跨多个团队和部门进行规划、追踪和管理复杂项目始终充满挑战。使用此模板，您可以更好地进行项目管理，包括任务管理、进度追踪、团队协作等。\u003c/p\u003e"}') ON DUPLICATE KEY UPDATE description = '{"type": "slate", "data": [{"type": "paragraph", "data": {"align": "alignLeft"}, "object": "block", "children": [{"text": "跨多个团队和部门进行规划、追踪和管理复杂项目始终充满挑战。使用此模板，您可以更好地进行项目管理，包括任务管理、进度追踪、团队协作等。"}]}], "render": "\u003cp\u003e跨多个团队和部门进行规划、追踪和管理复杂项目始终充满挑战。使用此模板，您可以更好地进行项目管理，包括任务管理、进度追踪、团队协作等。\u003c/p\u003e"}';
+            -- Bug追踪
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '表单', '$.views[1].name', '表格')
+            WHERE dst_id = 'dstYv2a12KQkcGmkuh';
+            
+            -- 产品库存
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '产品库存概览', '$.views[1].name', '库存概览', '$.views[2].name', '位置概览')
+            WHERE dst_id = 'dstRolRJbUDj4Nya3j';
+            
+            -- 任务
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '表格', '$.views[1].name', '看板视图')
+            WHERE dst_id = 'dstDv8WCvu6caQH7em';
+            
+            -- 全部教室
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '教室')
+            WHERE dst_id = 'dstyJ9CJV2HqJYVJ9d';
+            
+            -- 全部活动
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '所有活动', '$.views[1].name', '活动时间线', '$.views[2].name', '活动状态')
+            WHERE dst_id = 'dstaVzTu8decPrZyCr';
+            
+            -- 全部班级
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '班级日程', '$.views[1].name', '班级日历')
+            WHERE dst_id = 'dste9ykPgjHKRqGeWr';
+            
+            -- 全部课程
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '课程', '$.views[1].name', '课程卡片')
+            WHERE dst_id = 'dstPM12TLvUbL3HT6h';
+            
+            -- 关键结果
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '关键结果')
+            WHERE dst_id = 'dstRS7YqZC1hPQmGww';
+            
+            -- 内容日历
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '表格', '$.views[1].name', '甘特图', '$.views[2].name', '我的任务清单')
+            WHERE dst_id = 'dstMQdlkyMKqcgZ5Hr';
+            
+            -- 冲刺
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '表格', '$.views[1].name', '甘特图')
+            WHERE dst_id = 'dsttHHrJ73v53zeg1P';
+            
+            -- 单项目
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '任务视图', '$.views[1].name', '时间线')
+            WHERE dst_id = 'dst9JQFqb5Jew0KQSY';
+            
+            -- 发布计划
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '路线图', '$.views[1].name', '发布状态', '$.views[2].name', '评估', '$.views[3].name', '甘特图')
+            WHERE dst_id = 'dstQiltsPM0Pillyf3';
+            
+            -- 客户目录
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '客户目录')
+            WHERE dst_id = 'dstiMCR8KL2Da7ppN6';
+            
+            -- 房产
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '房产', '$.views[2].name', '时间线')
+            WHERE dst_id = 'dstTUY7cC8A5BwSpEE';
+            
+            -- 正式需求看板
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '视图')
+            WHERE dst_id = 'dstaCx7dxRr5sd4Uxd';
+            
+            -- 活动成果
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '查看所有活动')
+            WHERE dst_id = 'dstlRGnzXDnVMzDpBY';
+            
+            -- 用户
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '用户', '$.views[1].name', '联系表单', '$.views[2].name', '联系人')
+            WHERE dst_id = 'dstqLlWnyPZRvvrxC8';
+            
+            -- 研究
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '研究')
+            WHERE dst_id = 'dstzPEsxU7XMFK3ndN';
+            
+            -- 联系人（房产CRM）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '联系人', '$.views[1].name', '我的联系人')
+            WHERE dst_id = 'dstbP1faLDQdN2t8ZW';
+            
+            -- 联系人（客户项目）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '客户目录')
+            WHERE dst_id = 'dsteH98bsuEjJaxwUy';
+            
+            -- 要点
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '要点')
+            WHERE dst_id = 'dstSFvSJojwnYzMNm7';
+            
+            -- 视频制作流程
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '视频制作流程', '$.views[1].name', '时间线')
+            WHERE dst_id = 'dsteE8USdeh8AfjRJx';
+            
+            -- 视频状态
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '视频状态', '$.views[1].name', '视频需求列表')
+            WHERE dst_id = 'dsth9iPoRTcZpy8xTQ';
+            
+            -- 访谈记录
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '所有访谈', '$.views[1].name', '已完成访谈', '$.views[2].name', '访谈日历')
+            WHERE dst_id = 'dstjpim0xTjSSq8f6j';
+            
+            -- 采购记录
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '按日期采购', '$.views[1].name', '到货日历', '$.views[2].name', '采购订单状态')
+            WHERE dst_id = 'dstuA8kdk9Z1WZ4QzY';
+            
+            -- 销售订单
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '按日期销售订单')
+            WHERE dst_id = 'dst4sWlpojnQCPJavN';
+            
+            -- 需求收集表单
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '视图')
+            WHERE dst_id = 'dstvSQ9PNqdpMkQGc9';
+            
+            -- 项目（单项目管理）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '表格', '$.views[1].name', '甘特图')
+            WHERE dst_id = 'dstzhgTR4d8oa84jEq';
+            
+            -- 项目（客户项目）
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '项目视图', '$.views[1].name', '项目时间线', '$.views[2].name', '项目看板')
+            WHERE dst_id = 'dstYnuB97P2e5BA7Yk';
+            
+            -- 项目任务
+            UPDATE `${table.prefix}datasheet_meta`
+            SET meta_data = JSON_REPLACE(meta_data, '$.views[0].name', '客户项目任务', '$.views[1].name', '任务时间线')
+            WHERE dst_id = 'dsteppn64RG6Yx36ie';
+        </sql>
+    </changeSet>
+
+    <!-- ========================================================== -->
+    <!-- 翻译 apitable_node_desc 模板描述（text 格式） -->
+    <!-- ========================================================== -->
+    <changeSet id="V1.13-translate-template-desc-zh-001" author="apitable" labels="template-i18n">
+        <comment>翻译模板描述（apitable_node_desc，text 格式）</comment>
+        <sql>
+            SET NAMES utf8mb4;
+            -- 敏捷冲刺管理 (tplFNqzdFo0qK)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"冲刺（Sprint）是Scrum团队使用的短周期迭代，用于生成产品。在冲刺中，复杂的项目会被分解成小块。\\"冲刺使项目更易管理，让团队能更快、更频繁地交付高质量工作，并提供更大的灵活性来适应变化。\\"通过不同的视图，这个冲刺管理模板可以过滤任务、跟踪状态、展示产品路线图，帮助你：\\n\\n跟踪进度：多种视图提供清晰的概览，可视化进度。你可以看到从冲刺规划到冲刺结束的所有内容。\\n\\n高效协作：这个平台可用于分配任务、提出请求和发布共享项目的更新。\\n\\n此模板非常适合使用Scrum管理方法的公司。它不仅是产品经理、开发人员的平台，也适用于设计师、运营人员等。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplFNqzdFo0qK');
+
+            -- 产品发布计划 (tplDu36PN3yMt)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"产品发布计划也称为\\"项目计划\\"或\\"交付计划\\"，它描述了：\\n• 将要处理的主要项目\\n• 未来特定冲刺的目标功能\\n• 何时发布输出\\n\\n此模板通常由产品和工程团队使用，以确保成员对项目保持一致和可视化。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplDu36PN3yMt');
+
+            -- 客户项目管理 (tpl9Qy1d3BYC4)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"此模板非常适合咨询公司、律师事务所和销售团队，因为它可以帮助计算需要补偿的工作时间，让你对项目进度有一个高层次的概览，并创建一个协作平台。\\n\\n使用此模板的好处：\\n\\n可追溯性：项目的所有信息，包括开始/结束日期、负责人、客户联系人和时间线、进度状态都可以在这里跟踪，确保相关团队成员了解项目的一切，以便他们能够遵守时间限制并全力以赴。\\n\\n向客户收费：从创意生成到脚本编写和视频制作，整个记录和流程都可以在这里管理。这也是团队成员的协作平台，他们可以将所有材料和交付成果放在一个地方。\\n\\n协作：在这一个地方为利益相关者分配任务、发布共享项目的更新和文件，确保所有事情都得到安排和协调。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tpl9Qy1d3BYC4');
+
+            -- 视频制作管理 (tplkKZVZhoLcR)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"你可以使用此模板管理视频制作工作流程。模板表单可用于提出视频请求，看板用于管理联系人，仪表盘用于创建制作运行情况的概览。\\n\\n使用此模板的好处：\\n\\n可追溯性：通过过滤状态、优先级、类别等，你可以在这里跟踪所有制作项目，了解包括进度和阻塞原因在内的更新。\\n\\n流程管理：从创意生成到脚本编写和视频制作，整个记录和流程都可以在这里管理。这也是团队成员的协作平台，他们可以将所有材料和交付成果放在一个地方。\\n\\n此模板非常适合营销、广告、视频工作室、网红团队以及许多其他从事数字视频制作任务的组织。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplkKZVZhoLcR');
+
+            -- 单项目管理 (tplV4w28zRR5y)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"将截止日期、利益相关者、预算等汇集在一个地方。计划、管理和跟踪项目的每个方面，确保不会遗漏任何内容。\\n\\n使用此模板的好处：\\n\\n设置里程碑和时间线：通过不同的视图了解所有项目阶段的流程。这样你可以关注即将到来的截止日期，并自动通知任务负责人逾期项目。\\n\\n组织任务：为项目的每个阶段或类别构建组，并细化它们以反映团队或个人所有权。\\n\\n实现完全可见性：根据状态和优先级对任务进行分类，使整个团队都能访问其工作的实时真实来源。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplV4w28zRR5y');
+
+            -- 内容日历 (tpls68R8XJQXH)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"此模板用作工作流工具和创作过程中交付成果的中心枢纽，适用于营销、广告、视频、网红团队以及许多其他从事内容制作任务的组织。使用此模板，你可以：\\n\\n管理多个日程：通过使用甘特图视图，可以更轻松地围绕截止日期规划工作。\\n\\n明确分配任务：信息和资源可以在此日历中清晰列出，例如项目主题、内容类型、状态、发布渠道等。此外，内置通知将确保受让人了解他们的任务和相关资源。\\n\\n查看项目详情：此日历数据库让协作者可以将所有作品和重要数据放在这里，确保可以跟踪每个表现。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tpls68R8XJQXH');
+
+            -- 房产CRM (tplr0y8Z82JCy)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"此模板可用作管理房地产业务运营的集中数据库。你可以与潜在客户及其所需房产保持联系，存储房地产详细信息，在这里管理经纪人工作流程。\\n\\n使用此模板的好处：\\n\\n集中管理所有房产：在一个地方管理有关房产的所有信息，包括位置、房产详情、房产照片、价格等。\\n\\n捕获和管理潜在客户：使用可自定义的表单捕获客户线索。将每个线索与特定且合适的房产匹配，以获得成交机会。\\n\\n审查并分配任务给经纪人：即时可视化，以便跟踪经纪人工作量并相应地将可用经纪人与客户联系起来。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplr0y8Z82JCy');
+
+            -- 营销活动管理 (tplMQR44UebkN)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"从规划到执行，营销活动涉及几个不同的阶段，因此很复杂。此外，点击和转化的结果审查是一个混乱的过程。如果有一个解决方案可以跟踪营销活动的所有需求，那就太好了！\\n\\n使用此模板，你可以轻松跟踪和管理每个营销活动的组织进度。此外，你还可以通过跟踪从支出到点击和转化的所有内容来评估活动的表现。\\n\\n此模板非常适合小型企业和初创公司，并且足够灵活以适应大型企业。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplMQR44UebkN');
+
+            -- 用户研究管理 (tpl2h5oXUlARv)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"用户研究的任务是与用户交谈，收集他们的反馈，并将这些反馈转化为可在产品设计过程中使用的可操作见解。\\n\\n此模板用于帮助大规模实施反馈收集工作。有1个仪表盘和4个主要表格：\\n\\n研究仪表盘：提供研究会话状态和见解的概览。\\n用户：计划进行会话的用户列表。\\n研究：将所有研究材料（包括报告和会议记录）汇集在一起。\\n会话计划：帮助记录会话日期、时间和联系人。\\n洞见要点：将所有事实、见解、机会汇集在一起以做出决策。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tpl2h5oXUlARv');
+
+            -- 项目管理 (tplED3FVnX8U6)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"跨多个团队和部门规划、跟踪和管理复杂项目始终是一个挑战。通过使用此模板，你可以在项目管理方面做得更好：\\n\\n任务管理：通过展示任务的截止日期、不同视图、文件、团队评论、日历和受让人，此模板确保团队成员了解任务详情，让他们知道做什么、何时做以及如何做。\\n\\n协作：任务可以集中在一个地方并分发给不同的组织，以便不同的团队成员可以通过在同一文档窗口上工作来协作。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplED3FVnX8U6');
+
+            -- 内部需求管理 (tpl5X7cPb8R0R)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"通过营销部门的活动工作流模板，实现同样的透明度、可扩展性和灵活性。\\n\\n使用此模板的好处：\\n\\n集中所有内部和外部请求：利用表单收集你需要的所有相关信息，并将所有内容组织到一个统一的空间中。\\n\\n通过数据驱动的决策推动成功：使用真实数据为未来计划做出明智决策，以持续改进和增强你的工作。\\n\\n与外部利益相关者无缝协作：与供应商轻松协作，使信息易于访问，并在正确的时间与正确的团队共享正确的信息。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tpl5X7cPb8R0R');
+
+            -- 库存管理 (tplVaVrnBrUZT)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"对企业来说，库存管理并不容易。此模板是帮助跟踪库存、采购和销售的好工具。通过记录产品的详细信息，如价格、位置、图片、采购和销售订单等，你的企业可以跟踪库存水平。通过不同的视图，可以轻松展示每个产品的表现。如果你想优化库存，可以比较哪些产品销售得更快。\\n\\n小型本地企业和大型企业都可以依靠此模板，它足够灵活，可以优化以支持业务扩展。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplVaVrnBrUZT');
+
+            -- OKR追踪 (tpluf3QLJ4asF)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"此模板用于设定目标。它是跟踪团队中每个人OKR的有用工具。调查显示，提高员工绩效的方法之一是鼓励他们预先设定目标。使用此模板，你可以为团队创建一个公共场所，以频繁设置、跟踪和重新评估OKR，并使每个人都能看到团队的日常工作，提高他们在过程中的参与度。\\n\\n它非常适合初创公司和旨在快速增长或在组织中创建一致性的公司。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tpluf3QLJ4asF');
+
+            -- 课程排期 (tplvV9Y2mJvbS)
+            UPDATE `${table.prefix}node_desc` SET description = '{"text":"排课是一个复杂的过程，涉及检查多个工作表和准备时间表。为了有效地安排日程，将所有信息（包括课程、教室、班级）集中到一个直观的系统中非常重要。\\n\\n此模板的一些关键功能包括：\\n\\n• 课程、班级和教室的重要信息可以在相应级别汇总。\\n• 日历视图清晰地展示班级表。\\n• 一个\\"全部教室\\"表，允许教务处将教室分配给不同的班级。"}'
+            WHERE node_id = (SELECT node_id FROM `${table.prefix}template` WHERE template_id = 'tplvV9Y2mJvbS');
         </sql>
     </changeSet>
 
